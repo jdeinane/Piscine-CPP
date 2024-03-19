@@ -6,7 +6,7 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 09:38:05 by jubaldo           #+#    #+#              #
-#    Updated: 2024/03/19 09:41:04 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/03/19 09:43:08 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,13 @@ SRCS		=	megaphone.cpp
 
 NAME		=	megaphone
 
+OBJ			=	$(SRCS:.cpp=.o)
+
 CC			=	clang++
 
-CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98
-
 RM			=	rm -rf
+
+CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
 all:		$(NAME)
 
