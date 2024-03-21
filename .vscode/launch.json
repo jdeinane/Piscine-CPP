@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/jendiane/Documents/42/cpp/cpp01/ex00",
-      "program": "/Users/jendiane/Documents/42/cpp/cpp01/ex00/build/Debug/outDebug"
+      "cwd": "/Users/jendiane/Documents/42/cpp/cpp00/ex00",
+      "program": "/Users/jendiane/Documents/42/cpp/cpp00/ex00/build/Debug/outDebug"
     }
   ]
 }
