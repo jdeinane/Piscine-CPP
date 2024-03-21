@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 23:57:51 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/21 23:58:40 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/03/22 00:18:18 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,19 @@ private:
 	std::string phoneNumber;
 	std::string	darkestSecret;
 public:
-	void	setDetails();
-	void	displaySummary() const;
-	void	displayDetails() const;
+	Contact();
+	// Methodes pour definir les attributs
+	void	setFirstName(const std::string& fName);
+	void	setLastName(const std::string& lName);
+	void	setNickname(const std::string& nick);
+	void	setPhoneNumber(const std::string& phone);
+	void	setDarkestSecret(const std::string& secret);
+	// Methodes pour obtenir les valeurs des attributs
+	std::string getFirstName() const;
+	std::string getLastName() const;
+	std::string getNickname() const;
+	std::string getPhoneNumber() const;
+	std::string getDarkestSecret() const;
 };
 
 #endif
