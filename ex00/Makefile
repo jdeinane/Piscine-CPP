@@ -6,7 +6,7 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 09:38:05 by jubaldo           #+#    #+#              #
-#    Updated: 2024/03/19 09:43:08 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/03/21 22:12:51 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME		=	megaphone
 
 OBJ			=	$(SRCS:.cpp=.o)
 
-CC			=	clang++
+CC			=	g++
 
 RM			=	rm -rf
 
@@ -31,7 +31,7 @@ clean:
 	$(RM) $(OBJ)
 
 fclean:
-			$(RM) $(NAME)
+			$(RM) $(NAME) $(OBJ)
 
 re:			fclean $(NAME)
 
