@@ -6,13 +6,15 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 00:18:24 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/22 00:28:10 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/03/22 00:32:50 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
 
-Contact::Contact(){	
+Contact::Contact()
+	: firstName("N/A"), lastName("N/A"), nickname("N/A"),
+		phoneNumber("N/A"), darkestSecret("N/A") {
 }
 
 void	Contact::setFirstName(const std::string& fName){
