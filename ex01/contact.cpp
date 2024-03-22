@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 00:18:24 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/22 16:07:30 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/03/22 17:37:57 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,18 @@ void	Contact::setNickname(const std::string& nick){
 }
 
 void	Contact::setPhoneNumber(const std::string& phone){
-	phoneNumber = phone;
+	bool	isValid = true;
+
+	for (std::string::const_iterator it = phone.begin(); it != phone.end(); ++it) {
+		if (!std::isdigit(*it)) {
+			isValid = false;
+			break;
+		}
+	}
+	if (isValid)
+		phoneNumber = phone;
+	else
+		std::cout << "Invalid phone number. Please enter only numeric characters." << std::endl;
 }
 
 void	Contact::setDarkestSecret(const std::string& secret){
