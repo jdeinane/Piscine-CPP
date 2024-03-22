@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 23:57:51 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/22 00:18:18 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/03/22 13:20:14 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CONTACT_HPP
 
 #include <string>
+#include <iostream>
 
 class Contact {
 private:
@@ -30,6 +31,8 @@ public:
 	void	setNickname(const std::string& nick);
 	void	setPhoneNumber(const std::string& phone);
 	void	setDarkestSecret(const std::string& secret);
+	void	displayDetails() const;
+	void	setDetails();
 	// Methodes pour obtenir les valeurs des attributs
 	std::string getFirstName() const;
 	std::string getLastName() const;

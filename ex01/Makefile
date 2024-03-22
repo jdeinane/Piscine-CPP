@@ -6,12 +6,12 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 22:22:22 by jubaldo           #+#    #+#              #
-#    Updated: 2024/03/21 22:26:19 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/03/22 12:47:39 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS		=	
+SRCS		=	contact.cpp phonebook.cpp main.cpp
 
 NAME		=	phonebook
 

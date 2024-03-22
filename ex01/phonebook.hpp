@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 23:20:48 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/21 23:59:32 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/03/22 17:11:20 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 #define PHONEBOOK_HPP
 
 #include "contact.hpp"
+#include <iostream>
+#include <sstream>
+#include <limits>
+#include <cctype>
+#include <iomanip>
 
 class PhoneBook {
 private:
 	Contact	contacts[8];
 	int		contactCount;
+	void	printColumn(const std::string& str) const;
 public:
 	PhoneBook();
 	void	addContact();
