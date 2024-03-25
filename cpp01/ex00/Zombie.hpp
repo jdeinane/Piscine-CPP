@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:56:41 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/25 16:31:19 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/03/25 16:46:48 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,18 @@
 class Zombie
 {
 private:
-	std::string name;
+	std::string _name;
 public:
 	Zombie();
+	Zombie(std::string name);
 	~Zombie();
 	void	announce() const;
 };
 
 Zombie*	newZombie(std::string name);	// Fonction globale pour creer un nouveau zombie sur le tas
 void	randomChump(std::string name);	// Fonction globale pour creer un zombie sur la pile.
+
+#endif
 
 // 		Allocation sur la pile (Stack Allocation): 
 // - La pile est utilisée pour l'allocation de mémoire statique et locale, qui n'est pas destinée à être partagée
@@ -49,5 +52,3 @@ void	randomChump(std::string name);	// Fonction globale pour creer un zombie sur
 //
 // - Dans le cas de Zombie* newZombie(std::string name);, où un Zombie doit être utilisé en dehors de la fonction qui l'a créé,
 // il est nécessaire d'allouer la mémoire sur le tas pour conserver le Zombie après la fin de la fonction.
-
-#endif
