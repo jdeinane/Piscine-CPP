@@ -6,7 +6,7 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 22:22:22 by jubaldo           #+#    #+#              #
-#    Updated: 2024/03/22 12:47:39 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/03/25 15:17:38 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME		=	phonebook
 
 OBJ			=	$(SRCS:.cpp=.o)
 
-CC			=	g++
+CC			=	c++
 
 RM			=	rm -rf
 

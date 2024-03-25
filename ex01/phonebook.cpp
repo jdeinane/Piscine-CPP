@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 12:15:36 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/22 17:32:59 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/03/25 15:17:21 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int stringToInt(const std::string& str) {
 }
 
 void	PhoneBook::searchContact() {
-	std::cout << "Index     |First Name|Last Name |Nickname  " << std::endl;
+	std::cout << "     Index|First Name| Last Name|  Nickname|" << std::endl;
 
 	for (int i = 0; i < contactCount; i++) {
 		std::cout << std::setw(10) << i + 1 << '|';
@@ -70,17 +70,3 @@ void	PhoneBook::searchContact() {
 	else
 		std::cout << "Please enter a valid numeric index." << std::endl;
 }
-
-//	std::cout << "Enter contact's index to view details or press 0 to return: ";
-//	int	index;
-//	std::cin >> index;
-//	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-//
-//	if (index > 0 && index <= contactCount)
-//		contacts[index - 1].displayDetails();
-//	else if (index == 0)
-//		return;
-//	else if (index != 0)
-//		std::cout << "Invalid index or command." << std::endl;
-//	else
-//		std::cout << "Invalid index." << std::endl;
