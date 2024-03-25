@@ -6,14 +6,13 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 18:07:43 by jubaldo           #+#    #+#              #
-#    Updated: 2024/03/25 18:08:30 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/03/25 20:43:30 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=			zombie
+NAME			=			zombiehorde
 
-SRCS			=			main.cpp Zombie.cpp newZombie.cpp randomChump.cpp	
-
+SRCS			=			main.cpp Zombie.cpp zombieHorde.cpp
 CC				=			c++
 
 CFLAGS			=			-Wall -Wextra -Werror -std=c++98
