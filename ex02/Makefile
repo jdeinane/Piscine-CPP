@@ -6,34 +6,39 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 22:22:22 by jubaldo           #+#    #+#              #
-#    Updated: 2024/03/22 19:42:13 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/03/25 15:33:45 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME			=			account
 
-SRCS		=	Account.cpp tests.cpp
+SRCS			=			Account.cpp tests.cpp
 
-NAME		=	account
+CC				=			c++
 
-OBJ			=	$(SRCS:.cpp=.o)
+CFLAGS			=			-Wall -Wextra -Werror -std=c++98
 
-CC			=	g++
+RM				=			rm -rf
 
-RM			=	rm -rf
+OBJS			=			$(SRCS:.cpp=.o)
 
-CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98
+all				:			$(NAME)
 
-all:		$(NAME)
+$(NAME)			:			$(OBJS)
+								$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-$(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+%.o				:			%.cpp
+								$(CC) $(CFLAGS) -c $< -o $@
 
-clean:
-	$(RM) $(OBJ)
+clean			:
+								$(RM) $(OBJS)
 
-fclean:
-			$(RM) $(NAME) $(OBJ)
+fclean			:			clean
+								$(RM) $(NAME)
 
-re:			fclean $(NAME)
+re				:			fclean all
 
-.PHONY:		all clean fclean re
+prog			:			all clean
+									clear
+											
+.PHONY			:			all clean fclean re

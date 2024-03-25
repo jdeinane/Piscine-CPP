@@ -6,33 +6,39 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 09:38:05 by jubaldo           #+#    #+#              #
-#    Updated: 2024/03/21 22:12:51 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/03/25 15:31:55 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	megaphone.cpp
+NAME			=			megaphone
 
-NAME		=	megaphone
+SRCS			=			megaphone.cpp
 
-OBJ			=	$(SRCS:.cpp=.o)
+CC				=			c++
 
-CC			=	g++
+CFLAGS			=			-Wall -Wextra -Werror -std=c++98
 
-RM			=	rm -rf
+RM				=			rm -rf
 
-CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98
+OBJS			=			$(SRCS:.cpp=.o)
 
-all:		$(NAME)
+all				:			$(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+$(NAME)			:			$(OBJS)
+								$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-clean:
-	$(RM) $(OBJ)
+%.o				:			%.cpp
+								$(CC) $(CFLAGS) -c $< -o $@
 
-fclean:
-			$(RM) $(NAME) $(OBJ)
+clean			:
+								$(RM) $(OBJS)
 
-re:			fclean $(NAME)
+fclean			:			clean
+								$(RM) $(NAME)
 
-.PHONY:		all clean fclean re
+re				:			fclean all
+
+prog			:			all clean
+									clear
+											
+.PHONY			:			all clean fclean re
