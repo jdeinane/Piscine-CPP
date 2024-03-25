@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:56:41 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/25 16:46:48 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/03/25 17:52:51 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,13 @@ class Zombie
 private:
 	std::string _name;
 public:
-	Zombie();
 	Zombie(std::string name);
 	~Zombie();
 	void	announce() const;
 };
 
-Zombie*	newZombie(std::string name);	// Fonction globale pour creer un nouveau zombie sur le tas
-void	randomChump(std::string name);	// Fonction globale pour creer un zombie sur la pile.
+Zombie*	newZombie(std::string name);	// Fonction globale pour creer un nouveau zombie sur le tas (heap zombie)
+void	randomChump(std::string name);	// Fonction globale pour creer un zombie sur la pile (stack zombie)
 
 #endif
 
