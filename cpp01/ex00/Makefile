@@ -6,11 +6,11 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 15:55:34 by jubaldo           #+#    #+#              #
-#    Updated: 2024/03/25 15:57:55 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/03/25 17:34:16 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=			
+NAME			=			zombie
 
 SRCS			=			main.cpp Zombie.cpp newZombie.cpp randomChump.cpp	
 
