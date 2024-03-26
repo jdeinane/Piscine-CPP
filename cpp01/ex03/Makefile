@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/26 11:43:50 by jubaldo           #+#    #+#              #
-#    Updated: 2024/03/26 14:19:13 by jubaldo          ###   ########.fr        #
+#    Created: 2024/03/26 14:07:13 by jubaldo           #+#    #+#              #
+#    Updated: 2024/03/26 14:19:21 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=			hi
+NAME			=			weapon
 
-SRCS			=			main.cpp
+SRCS			=			main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 CC				=			c++
 
