@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:56:28 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/25 20:55:46 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/03/26 10:50:10 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ int	main() {
 }
 
 // int	main() {
-// 	int const N = 42;
-// 	Zombie	*horde = zombieHorde(N, "zombie");
+// 	int const N = 6;
+// 	Zombie	*horde = zombieHorde(N, "Zombie");
 	
 // 	for (int i = 0; i < N; i++)
 // 		horde[i].announce();
-		
+	
 // 	delete[] horde;
+// 	return 0;
 // }
