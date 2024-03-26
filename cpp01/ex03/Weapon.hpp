@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:12:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/26 14:35:11 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/03/26 15:35:19 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ private:
 	std::string	type;
 	
 public:
-	Weapon();
 	Weapon(const std::string& type);
-	~Weapon();
-	
 	const std::string& getType() const;
 	void setType(const std::string& type);
 };
