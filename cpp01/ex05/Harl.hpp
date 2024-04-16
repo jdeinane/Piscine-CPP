@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 10:55:14 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/04/13 11:29:07 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/04/16 18:02:03 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 #define HARL_HPP
 
 #include <string>
+#include <iostream>
 
 class	Harl {
+
 public:
 	Harl();
-	~Harl();
 	
 	void complain(std::string level);
 
