@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 16:08:46 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/04/09 17:32:23 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/04/17 15:56:05 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ std::string	replaceAll(const std::string& source, const std::string& s1, const s
 int	main(int ac, char **av)
 {
 	if (ac != 4) {
-		std::cerr << "Wrong arguments" << std::endl;
+		std::cerr << "Wrong arguments or inexistant file." << std::endl;
 		return 1;
 	}
 	
