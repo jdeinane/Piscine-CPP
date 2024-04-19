@@ -5,15 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 15:15:31 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/04/19 15:19:00 by jubaldo          ###   ########.fr       */
+/*   Created: 2024/04/17 16:03:35 by jubaldo           #+#    #+#             */
+/*   Updated: 2024/04/19 18:27:45 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define FIXED_HPP
 #ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed {
 private:
@@ -23,11 +24,22 @@ private:
 public:
 	Fixed();
 	Fixed(const Fixed& other);
+	Fixed(int const num);
+	Fixed(float const num);
+
 	Fixed& operator=(const Fixed& other);
+
 	~Fixed();
 
+	// Methodes d'acces
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
+
+	// Methodes de conversion
+	float toFloat(void) const;
+	int toInt(void) const;
+
+	friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 };
 
 #endif
