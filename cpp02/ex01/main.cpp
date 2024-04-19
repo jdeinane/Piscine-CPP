@@ -6,7 +6,20 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:15:23 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/04/19 15:15:24 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/04/19 15:21:39 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Fixed.hpp"
+
+int	main(void)
+{
+	Fixed 		a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
+
+	a = Fixed( 1234.4321f );
+
+	
+}
