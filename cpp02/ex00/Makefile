@@ -6,11 +6,11 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 16:03:21 by jubaldo           #+#    #+#              #
-#    Updated: 2024/04/17 16:04:56 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/04/19 12:36:16 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=			
+NAME			=			fixed
 
 SRCS			=			main.cpp Fixed.cpp
 
