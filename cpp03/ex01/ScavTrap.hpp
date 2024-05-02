@@ -6,7 +6,18 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 21:36:28 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/02 21:36:29 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/02 21:37:53 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
+#include <string>
+#include <iostream>
+
+
+
+
+
+#endif
