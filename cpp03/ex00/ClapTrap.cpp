@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:48:35 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/02 20:47:10 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/02 20:59:12 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,34 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << this->name << " is out of energy or dead. It's too late for reparations." << std::endl;
 }
 
+std::string ClapTrap::getName() const {
+	return name;
+}
 
+unsigned int ClapTrap::getHitPoints() const {
+	return hitPoints;
+}
 
+unsigned int ClapTrap::getEnergyPoints() const {
+	return energyPoints;
+}
+
+unsigned int ClapTrap::getAttackDamage() const {
+	return attackDamage;
+}
+
+void ClapTrap::setName(std::string const &newName) {
+	name = newName;
+}
+
+void ClapTrap::setHitPoints(unsigned int newHitPoints) {
+	hitPoints = newHitPoints;
+}
+
+void ClapTrap::setEnergyPoints(unsigned int newEnergyPoints) {
+	energyPoints = newEnergyPoints;
+}
+
+void ClapTrap::setAttackDamage(unsigned int newAttackDamage) {
+	attackDamage = newAttackDamage;
+}
