@@ -6,11 +6,11 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/29 18:48:24 by jubaldo           #+#    #+#              #
-#    Updated: 2024/04/29 18:50:00 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/05/02 19:58:03 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=			
+NAME			=			claptrap
 
 SRCS			=			main.cpp ClapTrap.cpp
 
