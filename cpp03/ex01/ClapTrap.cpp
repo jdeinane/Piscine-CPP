@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:48:35 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/02 21:32:04 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/03 15:57:01 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap(std::string const &name)
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Clap Trap " << this->name << " is destroyed." << std::endl;
+	std::cout << "ClapTrap " << this->name << " is destroyed." << std::endl;
 }
 
 void ClapTrap::attack(const std::string &target)
