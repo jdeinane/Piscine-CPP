@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:48:30 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/03 16:36:55 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/04 20:26:17 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ protected:
 
 public:
 	ClapTrap(std::string const &name);
-	~ClapTrap();
+	virtual ~ClapTrap();
 
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);

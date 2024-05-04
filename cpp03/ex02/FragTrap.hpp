@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:51:00 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/04 19:54:07 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/04 20:14:25 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
 	virtual ~FragTrap();
 
 	void highFivesGuys(void);
-}
+	void attack(const std::string& target);
+};
 
 #endif

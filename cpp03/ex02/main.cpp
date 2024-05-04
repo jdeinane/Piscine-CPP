@@ -6,62 +6,44 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:48:22 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/04 19:57:36 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/04 20:28:28 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	// ClapTrap claptrap("CL4P-TP");
+	ClapTrap claptrap("ClapMaster");
+	ScavTrap scavtrap("Scavenger");
+	FragTrap fragtrap("Fragger");
 
-	// std::cout << "ClapTrap " << claptrap.getName() << " has been created with "	
-	// 			<< claptrap.getHitPoints() << " hit points, "
-	// 			<< claptrap.getEnergyPoints() << " energy points, and "
-	// 			<< claptrap.getAttackDamage() << " attack damage." << std::endl;
-	
-	// std::cout << "Attempting to attack a target..." << std::endl;
-	// claptrap.attack("Target Dummy");
+	claptrap.attack("a random target");
+	scavtrap.attack("a random target");
+	fragtrap.attack("a random target");
 
-	// std::cout << "Taking Damage..." << std::endl;
-	// claptrap.takeDamage(5);
-
-	// std::cout << "Attempting to repair..." << std::endl;
-	// claptrap.beRepaired(5);
-
-	// std::cout << "Final state: " << std::endl;
-	// std::cout << "ClapTrap " << claptrap.getName() << " has "
-	// 			<< claptrap.getHitPoints() << " hit points and "
-	// 			<< claptrap.getEnergyPoints() << " energy points left." << std::endl;
-
-	// std::cout << "---------------------------------------------------------------------------" << std::endl;
-
-	ScavTrap scavtrap("Guardian");
-	
-	std::cout << scavtrap.getName() << " has "
-				<< scavtrap.getHitPoints() << " hits points, "
-				<< scavtrap.getEnergyPoints() << " energy points, and "
-				<< scavtrap.getAttackDamage() << " attack damage." << std::endl;
-	
-	std::cout << "ScavTrap is attacking a target!" << std::endl;
-	scavtrap.attack("Enemy");
-	
-	std::cout << "ScavTrap is entering gatekeeper mode..." << std::endl;
+	std::cout << std::endl << "Demonstrating special capabilities: " << std::endl;
 	scavtrap.guardGate();
+	fragtrap.highFivesGuys();
 
-	std::cout << "ScavTrap is taking damage..." << std::endl;
+	std::cout << std::endl << "Dealing damage to all:" << std::endl;
+	claptrap.takeDamage(10);
 	scavtrap.takeDamage(20);
-	
-	std::cout << "ScavTrap is repairing itself..." << std::endl;
-	scavtrap.beRepaired(15);
+	fragtrap.takeDamage(30);
 
-	std::cout << "Final state: " << std::endl;
-	std::cout << "ScavTrap " << scavtrap.getName() << " has "
-				<< scavtrap.getHitPoints() << " hit points and "
-				<< scavtrap.getEnergyPoints() << " energy points left." << std::endl;
+	std::cout << std::endl << "Repairing all:" << std::endl;
+	claptrap.beRepaired(5);
+	scavtrap.beRepaired(10);
+	fragtrap.beRepaired(15);
+	
+    std::cout << std::endl << "Final states:" << std::endl;
+    std::cout << claptrap.getName() << " has " << claptrap.getHitPoints() << " hit points left." << std::endl;
+    std::cout << scavtrap.getName() << " has " << scavtrap.getHitPoints() << " hit points left." << std::endl;
+    std::cout << fragtrap.getName() << " has " << fragtrap.getHitPoints() << " hit points left." << std::endl;
+
+	// FragTrap ft("FT1");
 
 	return 0;
-
 }
