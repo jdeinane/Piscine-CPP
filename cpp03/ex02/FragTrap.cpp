@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 21:36:27 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/04 19:56:26 by jubaldo          ###   ########.fr       */
+/*   Created: 2024/05/04 19:51:09 by jubaldo           #+#    #+#             */
+/*   Updated: 2024/05/04 19:54:52 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 ScavTrap::ScavTrap()
 	: ClapTrap("DefaultScav") {
@@ -29,19 +29,5 @@ ScavTrap::ScavTrap(std::string const &name)
 	}
 
 ScavTrap::~ScavTrap() {
-	std::cout << "ScavTrap " << name << " is being deconstructed." << std::endl;
-}
-
-void ScavTrap::guardGate() {
-	std::cout << "ScavTrap" << name << " is now in Gate keeper mode." << std::endl;
-}
-
-void ScavTrap::attack(const std::string& target) {
-	if (energyPoints > 0 && hitPoints > 0) {
-		std::cout << "ScavTrap " << name << " attacks " << target
-				<< ", causing " << attackDamage << " points of damage! It's super effective!" << std::endl;
-		energyPoints--;
-	}
-	else
-		std::cout << "ScavTrap " << name << " cannot attack due to lack of energy or hit points." << std::endl;
+	std::cout << "ScavTrap " << name << " has been destroyed." << std::endl;
 }
