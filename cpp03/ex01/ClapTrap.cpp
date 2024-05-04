@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:48:35 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/03 15:57:01 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/04 19:48:32 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void ClapTrap::attack(const std::string &target)
 {
 	if (this->energyPoints > 0 && this-> hitPoints > 0) {
 		std::cout << "ClapTrap " << this->name << " attacks " << target 
-					<< ", causing " << this->attackDamage << " points of damage!" << std::endl;
+					<< ", causing " << this->attackDamage << " points of damage! It's not very effective..." << std::endl;
 		this->energyPoints--;
 	}
 	else

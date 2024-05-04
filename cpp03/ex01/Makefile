@@ -6,13 +6,13 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/29 18:48:24 by jubaldo           #+#    #+#              #
-#    Updated: 2024/05/02 19:58:03 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/05/03 16:44:58 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=			claptrap
 
-SRCS			=			main.cpp ClapTrap.cpp
+SRCS			=			main.cpp ClapTrap.cpp ScavTrap.cpp
 
 CC				=			c++
 
