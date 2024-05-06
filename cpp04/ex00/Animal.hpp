@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:46:46 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/06 18:49:42 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/06 19:02:25 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	virtual ~Animal();
 
 	std::string getType() const;
-	virtual void makeSound();
+	virtual void makeSound() const;
 };
 
 #endif
