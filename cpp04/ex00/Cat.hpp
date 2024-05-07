@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 18:03:55 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/07 16:49:35 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/07 17:01:33 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ class Cat : public Animal {
 public:
 	Cat();
 	virtual ~Cat();
+	Cat(const Cat& other);
+	Cat& operator=(const Cat& other);
+	
 	virtual void makeSound() const;
 };
 
