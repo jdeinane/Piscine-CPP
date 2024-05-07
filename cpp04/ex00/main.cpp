@@ -6,11 +6,15 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:45:15 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/06 17:49:13 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/07 16:53:49 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -24,5 +28,23 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
-	return 0
+	delete j;
+	delete i;
+	delete meta;
+
+	std::cout << "-----------------------------------------------------" << std::endl;
+
+	const WrongAnimal* wrongMeta = new WrongAnimal();
+	const WrongAnimal* wrongI = new WrongCat();
+
+	std::cout << wrongMeta->getType() << " " << std::endl;
+	std::cout << wrongI->getType() << " " << std::endl;
+
+	wrongI->makeSound();	
+	wrongMeta->makeSound();
+
+	delete wrongMeta;
+	delete wrongI;
+
+	return 0;
 }

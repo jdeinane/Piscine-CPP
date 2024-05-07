@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 18:56:43 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/06 18:58:17 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/07 15:22:30 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 
 	~WrongCat();
 
-	void makeSound() const override;
+	void makeSound() const;
 };
 
 #endif
