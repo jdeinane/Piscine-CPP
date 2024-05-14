@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:45:15 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/14 16:31:51 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/14 16:36:28 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int main()
 {
 //    Animal testAnimal;
 
-    // Create instances of derived classes
     Animal* dog = new Dog();
     Animal* cat = new Cat();
 
