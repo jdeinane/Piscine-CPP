@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:46:46 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/06 19:02:25 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/14 16:27:10 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ public:
 
 	Animal& operator=(const Animal& other);
 	
-	virtual ~Animal();
+	virtual ~Animal() = 0;
 
 	std::string getType() const;
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0;
 };
 
 #endif
