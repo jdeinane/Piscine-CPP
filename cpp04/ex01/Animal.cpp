@@ -6,13 +6,13 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 15:01:02 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/14 15:26:26 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/07 15:07:27 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() : type("Animal") {
+Animal::Animal() : type("Undefined") {
 	std::cout << "An animal has been created." << std::endl;
 }
 

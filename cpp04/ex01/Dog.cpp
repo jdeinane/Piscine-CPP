@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 18:03:55 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/14 15:27:03 by jubaldo          ###   ########.fr       */
+/*   Created: 2024/05/07 15:09:18 by jubaldo           #+#    #+#             */
+/*   Updated: 2024/05/07 15:09:43 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Dog.hpp"
 
-#include "Animal.hpp"
+Dog::Dog() {
+	type = "Dog";
+	std::cout << "A Dog has been created." << std::endl;
+}
 
-class Cat : public Animal {
-public:
-	Cat();
-	virtual ~Cat();	
-	virtual void makeSound() const;
-};
+Dog::~Dog() {
+	std::cout << "A Dog has been destroyed." << std::endl;
+}
 
-#endif
+void Dog::makeSound() const {
+	std::cout << "Waf!" << std::endl;
+}

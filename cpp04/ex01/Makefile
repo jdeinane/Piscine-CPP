@@ -6,14 +6,14 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 17:45:04 by jubaldo           #+#    #+#              #
-#    Updated: 2024/05/07 16:53:03 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/05/13 15:56:24 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=			poly
 
 SRCS			=			main.cpp Animal.cpp Cat.cpp Dog.cpp \
-							WrongAnimal.cpp WrongCat.cpp
+							WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 CC				=			c++
 

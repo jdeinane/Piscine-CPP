@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 18:03:55 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/14 15:27:03 by jubaldo          ###   ########.fr       */
+/*   Created: 2024/05/06 18:56:43 by jubaldo           #+#    #+#             */
+/*   Updated: 2024/05/07 15:22:30 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Cat : public Animal {
+class WrongCat : public WrongAnimal {
 public:
-	Cat();
-	virtual ~Cat();	
-	virtual void makeSound() const;
+	WrongCat();
+	WrongCat(const WrongCat& other);
+
+	WrongCat& operator=(const WrongCat & other);
+
+	~WrongCat();
+
+	void makeSound() const;
 };
 
 #endif
