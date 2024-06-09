@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:56:28 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/26 10:50:10 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/09 19:51:00 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,33 @@
 int	main() {
 	int	nZombies;
 	std::string	zombieName;
+	std::string	input;
 
 	std::cout << "Enter the number of zombies in the horde: ";
-	std::cin >> nZombies;
-	
-	if (std::cin.fail() || nZombies <= 0) {
-		std::cerr << "Invalid input. Please enter a positive number." << std::endl;
+	std::getline(std::cin, input);
+
+	std::istringstream iss(input);
+	if (!(iss >> nZombies) || nZombies <= 0)
+	{
+		std::cerr << "Invalid input." << std::endl;
 		return 1;
 	}
+	
 	std::cout << "Enter a name for the zombies: ";
-	std::cin >> zombieName;
+	std::getline(std::cin, zombieName);
+
+	if (zombieName.empty())
+	{
+		std::cerr << "Invalid input. Please enter a non-empty name." << std::endl;
+		return 1;
+	}
 
 	Zombie* horde = zombieHorde(nZombies, zombieName);
+	if (!horde)
+	{
+		std::cerr << "Failed to create zombie horde." << std::endl;
+		return 1;
+	}
 	for (int i = 0; i < nZombies; i++)
 		horde[i].announce();
 		

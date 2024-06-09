@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 18:08:12 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/26 10:47:42 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/09 19:45:20 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 Zombie*	zombieHorde(int N, std::string name) {
 	Zombie* horde = new Zombie[N];
+	if (!horde){
+		std::cerr << "Memory allocation failed." << std::endl;
+		return NULL;
+	}
 
 	if (N <= 0)
 		return NULL;
