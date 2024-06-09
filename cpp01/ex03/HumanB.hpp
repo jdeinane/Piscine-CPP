@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:12:53 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/26 15:50:51 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/09 20:40:18 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,6 @@ public:
 };
 
 #endif
+
+// HumanB utilise un pointeur à Weapon qui peut être NULL:
+// ce qui est correct puisque l'arme n' est pas définie à la création.
