@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 11:43:48 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/26 13:04:35 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/09 20:13:43 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,11 @@ int	main() {
 	std::cout << *stringPTR << std::endl;
 	std:: cout << stringREF << std::endl;
 }
+
+
+// Pointeurs : Flexibles, peuvent être nuls, peuvent être réassignés, supportent 
+// 			l'arithmétique des pointeurs. 
+
+// Références : Simples, toujours valides après initialisation, 
+// 			ne peuvent pas être réassignées, n 'ont pas besoin 
+// 			d'être déréférencées.
