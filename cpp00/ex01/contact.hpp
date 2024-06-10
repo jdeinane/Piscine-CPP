@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 23:57:51 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/22 13:20:14 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/10 15:30:01 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+#include <algorithm>
 
 class Contact {
 private:

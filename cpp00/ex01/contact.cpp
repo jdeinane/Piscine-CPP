@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 00:18:24 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/06/10 15:22:26 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/10 15:33:51 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,17 @@ Contact::Contact()
 
 static bool isNumber(const std::string &str)
 {
-	for (std::string::const_iterator it = str.begin(); it != str.end(); ++it)
-	{
+	for (std::string::const_iterator it = str.begin(); it != str.end(); ++it){
 		if (!std::isdigit(*it))
+			return false;
+	}
+	return true;
+}
+
+static bool isPrintable(const std::string &str)
+{
+	for (std::string::const_iterator it = str.begin(); it != str.end(); ++it){
+		if (!std::isprint(*it))
 			return false;
 	}
 	return true;
@@ -37,7 +45,8 @@ void	Contact::setDetails() {
 			return;
 		std::cout << "Enter first name: ";
 		std::getline(std::cin, input);
-		if (!input.empty()){
+		if (!input.empty() && isPrintable(input))
+		{
 			setFirstName(input);
 			break;
 		}
@@ -49,7 +58,8 @@ void	Contact::setDetails() {
 			return;
 		std::cout << "Enter last name: ";
 		std::getline(std::cin, input);
-		if (!input.empty()){
+		if (!input.empty() && isPrintable(input))
+		{
 			setLastName(input);
 			break;
 		}
@@ -61,7 +71,8 @@ void	Contact::setDetails() {
 			return;
 		std::cout << "Enter nickname: ";
 		std::getline(std::cin, input);
-		if (!input.empty()){
+		if (!input.empty() && isPrintable(input))
+		{
 			setNickname(input);
 			break;
 		}
@@ -73,7 +84,8 @@ void	Contact::setDetails() {
 			return;
 		std::cout << "Enter phone number: ";
 		std::getline(std::cin, input);
-		if (!input.empty() && isNumber(input)){
+		if (!input.empty() && isNumber(input) && isPrintable(input))
+		{
 			setPhoneNumber(input);
 			break;
 		}
@@ -85,7 +97,7 @@ void	Contact::setDetails() {
 			return;
 		std::cout << "Enter darkest secret: ";
 		std::getline(std::cin, input);
-		if (!input.empty()){
+		if (!input.empty() && isPrintable(input)){
 			setDarkestSecret(input);
 			break;
 		}
