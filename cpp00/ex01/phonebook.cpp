@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 12:15:36 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/25 15:17:21 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/10 15:17:25 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ void	PhoneBook::printColumn(const std::string& str) const {
 }
 
 bool isNumber(const std::string& str) {
-    for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
-        if (!std::isdigit(*it)) 
+	for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
+		if (!std::isdigit(*it)) 
 			return false;
-    }
-    return true;
+	}
+	return true;
 }
 
 int stringToInt(const std::string& str) {
-    std::istringstream iss(str);
-    int num;
-    iss >> num;
-    return num;
+	std::istringstream iss(str);
+	int num;
+	iss >> num;
+	return num;
 }
 
 void	PhoneBook::searchContact() {

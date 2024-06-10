@@ -6,43 +6,91 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 00:18:24 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/03/22 17:37:57 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/10 15:22:26 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
+#include "phonebook.hpp"
 
 Contact::Contact()
 	: firstName("N/A"), lastName("N/A"), nickname("N/A"),
 		phoneNumber("N/A"), darkestSecret("N/A") {
 }
 
+static bool isNumber(const std::string &str)
+{
+	for (std::string::const_iterator it = str.begin(); it != str.end(); ++it)
+	{
+		if (!std::isdigit(*it))
+			return false;
+	}
+	return true;
+}
+
 void	Contact::setDetails() {
 	std:: string input;
 
-	std::cout << "Enter firstname: ";
-	std::getline(std::cin, input);
-	setFirstName(input);
+	while (true)
+	{
+		if (std::cin.eof())
+			return;
+		std::cout << "Enter first name: ";
+		std::getline(std::cin, input);
+		if (!input.empty()){
+			setFirstName(input);
+			break;
+		}
+	}
 
-	std::cout << "Enter last name: ";
-	std::getline(std::cin, input);
-	setLastName(input);
+	while (true)
+	{
+		if (std::cin.eof())
+			return;
+		std::cout << "Enter last name: ";
+		std::getline(std::cin, input);
+		if (!input.empty()){
+			setLastName(input);
+			break;
+		}
+	}
 
-	std::cout << "Enter nickname: ";
-	std::getline(std::cin, input);
-	setNickname(input);
-	
-	std::cout << "Enter phone number: ";
-	std::getline(std::cin, input);
-	setPhoneNumber(input);
+	while (true)
+	{
+		if (std::cin.eof())
+			return;
+		std::cout << "Enter nickname: ";
+		std::getline(std::cin, input);
+		if (!input.empty()){
+			setNickname(input);
+			break;
+		}
+	}
 
-	std::cout << "Enter darkest secret: ";
-	std::getline(std::cin, input);
-	setDarkestSecret(input);
+	while (true)
+	{
+		if (std::cin.eof())
+			return;
+		std::cout << "Enter phone number: ";
+		std::getline(std::cin, input);
+		if (!input.empty() && isNumber(input)){
+			setPhoneNumber(input);
+			break;
+		}
+	}
+
+	while (true)
+	{
+		if (std::cin.eof())
+			return;
+		std::cout << "Enter darkest secret: ";
+		std::getline(std::cin, input);
+		if (!input.empty()){
+			setDarkestSecret(input);
+			break;
+		}
+	}
 }
-
-// std::getline(std::cin, input) est utilisé pour lire les entrées
-// de l'utilisateur, y compris les espaces, jusqu'à ce qu'un saut de ligne soit rencontré.
 
 void	Contact::setFirstName(const std::string& fName){
 	firstName = fName;
@@ -57,18 +105,7 @@ void	Contact::setNickname(const std::string& nick){
 }
 
 void	Contact::setPhoneNumber(const std::string& phone){
-	bool	isValid = true;
-
-	for (std::string::const_iterator it = phone.begin(); it != phone.end(); ++it) {
-		if (!std::isdigit(*it)) {
-			isValid = false;
-			break;
-		}
-	}
-	if (isValid)
-		phoneNumber = phone;
-	else
-		std::cout << "Invalid phone number. Please enter only numeric characters." << std::endl;
+	phoneNumber = phone;
 }
 
 void	Contact::setDarkestSecret(const std::string& secret){
