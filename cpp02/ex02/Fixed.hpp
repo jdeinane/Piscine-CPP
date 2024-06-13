@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:03:35 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/04/29 18:35:35 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/13 18:19:03 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ private:
 
 public:
 	Fixed();
-	Fixed(const Fixed& other);
-	Fixed(const int int_num);
-	Fixed(const float float_num);
+	Fixed(const int intValue);
+	Fixed(const float floatValue);
+	Fixed(const Fixed &other);
+
+	// Operateur d'affectation
+	Fixed &operator=(const Fixed &other);
 
 	~Fixed();
-
-	// Operateur d'assignation
-	Fixed& operator=(const Fixed& other);
 
 	// Operateurs de comparaison
 	bool operator>(const Fixed& other) const;
@@ -58,11 +58,15 @@ public:
 	static const Fixed& min(const Fixed& a, const Fixed&b);
 	static const Fixed& max(const Fixed& a, const Fixed&b);
 
+	// Methodes d'acces
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
+
 	// Methodes pour convertir en d'autres types
 	float toFloat() const;
 	int toInt() const;
-
-	friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif

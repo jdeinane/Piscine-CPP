@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:03:35 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/04/19 19:42:51 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/13 16:28:08 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ private:
 
 public:
 	Fixed();
-	Fixed(const Fixed& other);
-	Fixed(int const num);
-	Fixed(float const num);
+	Fixed(const int intValue);
+	Fixed(const float floatValue);
+	Fixed(const Fixed &other);
 
-	Fixed& operator=(const Fixed& other);
+	Fixed& operator=(const Fixed &other);
 
 	~Fixed();
 
@@ -38,8 +38,8 @@ public:
 	// Methodes de conversion
 	float toFloat(void) const;
 	int toInt(void) const;
-
-	friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
