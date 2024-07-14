@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 19:48:22 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/06/13 18:19:44 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/14 13:13:34 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,7 @@ Fixed Fixed::operator*(const Fixed& other) const{
 }
 
 Fixed Fixed::operator/(const Fixed& other) const{
-	if (other.value == 0)
-	{
+	if (other.value == 0) {
 		std::cerr << "Division by zero" << std::endl;
 		return Fixed();
 	}
@@ -113,24 +112,24 @@ Fixed Fixed::operator/(const Fixed& other) const{
 }
 
 Fixed& Fixed::operator++() {
-	this->value++;
+	this->value += 1;
 	return *this;
 }
 
 Fixed& Fixed::operator--() {
-	this->value--;
+	this->value -= 1;
 	return *this;
 }
 
 Fixed Fixed::operator++(int) {
 	Fixed temp(*this);
-	++(*this);
+	this->value += 1;
 	return temp;
 }
 
 Fixed Fixed::operator--(int) {
 	Fixed temp(*this);
-	++(*this);
+	this->value -= 1;
 	return temp;
 }
 

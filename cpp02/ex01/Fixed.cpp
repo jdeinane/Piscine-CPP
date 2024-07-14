@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:15:41 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/06/13 16:28:02 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/14 12:40:32 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ int Fixed::toInt(void) const {
 }
 
 std::ostream& operator<<(std::ostream &out, const Fixed &fixed) {
-    out << fixed.toFloat();
-    return out;
+	out << fixed.toFloat();
+	return out;
 }
