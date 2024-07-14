@@ -6,42 +6,42 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:51:09 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/04 20:17:53 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/29 17:40:41 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
-	: ClapTrap("DefaultFrag") {
+FragTrap::FragTrap() : ClapTrap("DefaultFrag") {
 	hitPoints = 100;
 	energyPoints = 100;
 	attackDamage = 30;
-	std::cout << "FragTrap " << name << " has been constructed with default settings." << std::endl;
+	std::cout << "FragTrap default constructor called for " << name << std::endl;
 }
 
-FragTrap::FragTrap(std::string const &name)
-	: ClapTrap(name) {
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	hitPoints = 100;
 	energyPoints = 100;
 	attackDamage = 30;
-	std::cout << "FragTrap " << name << " has been constructed." << std::endl;
-	}
+	std::cout << "FragTrap constructor for " << name << " has been called." << std::endl;
+}
 
 FragTrap::~FragTrap() {
-	std::cout << "FragTrap " << name << " is being deconstructed." << std::endl;
+	std::cout << "FragTrap destructor called for " << name << std::endl;
+}
+
+FragTrap &FragTrap::operator=(const FragTrap &other) {
+	if (this != &other) 
+		ClapTrap::operator=(other);
+	std::cout << "FragTrap assignment operator called for " << name << std::endl;
+	return *this;
+}
+
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
+{
+	std::cout << "FragTrap copy constructor called for " << name << std::endl;
 }
 
 void FragTrap::highFivesGuys() {
-	std::cout << "FragTrap" << name << " requests a high five!" << std::endl;
-}
-
-void FragTrap::attack(const std::string& target) {
-	if (energyPoints > 0 && hitPoints > 0) {
-		std::cout << "FragTrap " << name << " attacks " << target
-				<< ", causing " << attackDamage << " points of damage! It's effective!" << std::endl;
-		energyPoints--;
-	}
-	else
-		std::cout << "FragTrap " << name << " cannot attack due to lack of energy or hit points." << std::endl;
+	std::cout << "FragTrap " << name << " requests a high five!" << std::endl;
 }

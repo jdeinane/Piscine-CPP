@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:48:22 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/04 20:28:28 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/29 18:16:01 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,24 @@
 
 int main()
 {
-	ClapTrap claptrap("ClapMaster");
-	ScavTrap scavtrap("Scavenger");
-	FragTrap fragtrap("Fragger");
+	ClapTrap claptrap("Clappy");
+	ScavTrap scavtrap("Scavvy");
+	FragTrap fragtrap("Fraggy");
+
+	std::cout << std::endl;
 
 	claptrap.attack("a random target");
 	scavtrap.attack("a random target");
 	fragtrap.attack("a random target");
+
+	std::cout << std::endl;
 
 	std::cout << std::endl << "Demonstrating special capabilities: " << std::endl;
 	scavtrap.guardGate();
 	fragtrap.highFivesGuys();
 
 	std::cout << std::endl << "Dealing damage to all:" << std::endl;
-	claptrap.takeDamage(10);
+	claptrap.takeDamage(0);
 	scavtrap.takeDamage(20);
 	fragtrap.takeDamage(30);
 
@@ -37,13 +41,7 @@ int main()
 	claptrap.beRepaired(5);
 	scavtrap.beRepaired(10);
 	fragtrap.beRepaired(15);
-	
-    std::cout << std::endl << "Final states:" << std::endl;
-    std::cout << claptrap.getName() << " has " << claptrap.getHitPoints() << " hit points left." << std::endl;
-    std::cout << scavtrap.getName() << " has " << scavtrap.getHitPoints() << " hit points left." << std::endl;
-    std::cout << fragtrap.getName() << " has " << fragtrap.getHitPoints() << " hit points left." << std::endl;
 
-	// FragTrap ft("FT1");
-
+	std::cout << std::endl;
 	return 0;
 }

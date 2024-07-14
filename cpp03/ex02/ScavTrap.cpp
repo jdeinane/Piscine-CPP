@@ -6,42 +6,59 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 21:36:27 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/04 19:56:00 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/29 17:27:38 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
-	: ClapTrap("DefaultScav") {
+ScavTrap::ScavTrap() : ClapTrap("DefaultScav")
+{
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
-	std::cout << "ScavTrap " << name << " has been constructed with default settings." << std::endl;
+	std::cout << "ScavTrap default constructor called for " << name << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string const &name)
-	: ClapTrap(name) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+{
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
-	std::cout << "ScavTrap " << name << " has been constructed." << std::endl;
-	}
-
-ScavTrap::~ScavTrap() {
-	std::cout << "ScavTrap " << name << " is being deconstructed." << std::endl;
+	std::cout << "ScavTrap constructor for " << name << " has been called." << std::endl;
 }
 
-void ScavTrap::guardGate() {
-	std::cout << "ScavTrap" << name << " is now in Gate keeper mode." << std::endl;
+ScavTrap::~ScavTrap()
+{
+	std::cout << "ScavTrap destructor called for " << name << std::endl;
 }
 
-void ScavTrap::attack(const std::string& target) {
-	if (energyPoints > 0 && hitPoints > 0) {
+ScavTrap &ScavTrap::operator=(const ScavTrap &other)
+{
+	if (this != &other)
+		ClapTrap::operator=(other);
+	std::cout << "ScavTrap assignment operator called for " << name << std::endl;
+	return *this;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
+{
+	std::cout << "ScavTrap copy constructor called for " << name << std::endl;
+}
+
+void ScavTrap::attack(const std::string &target)
+{
+	if (energyPoints > 0 && hitPoints > 0)
+	{
 		std::cout << "ScavTrap " << name << " attacks " << target
-				<< ", causing " << attackDamage << " points of damage! It's super effective!" << std::endl;
+				  << ", causing " << attackDamage << " points of damage!" << std::endl;
 		energyPoints--;
 	}
 	else
-		std::cout << "ScavTrap " << name << " cannot attack due to lack of energy or hit points." << std::endl;
+		std::cout << "ScavTrap " << name << " has no energy or hit points left to attack!" << std::endl;
+}
+
+void ScavTrap::guardGate()
+{
+	std::cout << "ScavTrap " << name << " is now in Gate keeper mode." << std::endl;
 }

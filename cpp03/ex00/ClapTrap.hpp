@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:48:30 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/02 21:28:47 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/26 14:43:24 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,19 @@ private:
 	unsigned int attackDamage;
 
 public:
-	ClapTrap(std::string const &name);
+	ClapTrap();
+	ClapTrap(std::string name);
+	ClapTrap(const ClapTrap &other);
+	ClapTrap &operator=(const ClapTrap &other);
+
 	~ClapTrap();
 
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-
-	std::string getName() const;
-	unsigned int getHitPoints() const;
-	unsigned int getEnergyPoints() const;
-	unsigned int getAttackDamage() const;
-
-	void setName(std::string const &name);
-	void setHitPoints(unsigned int hitPoints);
-	void setEnergyPoints(unsigned int energyPoints);
-	void setAttackDamage(unsigned int attackDamage);
 };
 
 #endif
+
+// L'heritage en C++ OOP permet a une classe de deriver des proprietes (attributs et methodes) 
+// d'une autre classe.
