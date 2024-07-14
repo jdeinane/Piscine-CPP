@@ -6,58 +6,76 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:45:15 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/13 15:56:17 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/07/12 17:59:46 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "includes/Animal.hpp"
+#include "includes/Brain.hpp"
+#include "includes/Cat.hpp"
+#include "includes/Dog.hpp"
+#include "includes/WrongAnimal.hpp"
+#include "includes/WrongCat.hpp"
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	// std::cout << std::endl;
+	// std::cout << "-----------------------------------------------------" << std::endl;
+	// std::cout << std::endl;
 
-	std::cout << j->getType() << " makes a sound: ";
-	j->makeSound();
+	// std::cout << "Basic tests:" << std::endl;
+	// std::cout << std::endl;
+	// const Animal* j = new Dog();
+	// const Animal* i = new Cat();
 
-	std::cout << i->getType() << " makes a sound: ";
-	i->makeSound();
+	// std::cout << j->getType() << " makes a sound: ";
+	// j->makeSound();
 
-	delete j;
-	delete i;
+	// std::cout << i->getType() << " makes a sound: ";
+	// i->makeSound();
 
-	std::cout << "\nAdditional Tests:\n";
-	Dog	dog1;
-	Cat	cat1;
+	// delete j;
+	// delete i;
 
-	Dog	dog2;
-	Cat	cat2;
+	std::cout << std::endl;
+	std::cout << "-----------------------------------------------------" << std::endl;
+	std::cout << std::endl;
 
-	std::cout << "dog2 makes a sound: ";
-	dog2.makeSound();
+	std::cout << "Deep copy and assignments tests:" << std::endl;
+	std::cout << std::endl;
+	
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
+	
+	std::cout << std::endl;
+	std::cout << "-----------------------------------------------------" << std::endl;
+	std::cout << std::endl;
 
-	std::cout << "cat2 makes a sound: ";
-	cat2.makeSound();
+	std::cout << "Array tests:" << std::endl;
+	std::cout << std::endl;
+	
+	Animal *animals[4];
 
-	std::cout << "\nDynamic allocation tests:\n";
-	Animal*	animals[4];
+	std::cout << std::endl;
+
 	animals[0] = new Dog();
-	animals[1] = new Dog();
-	animals[2] = new Cat();
+	animals[1] = new Cat();
+	animals[2] = new Dog();
 	animals[3] = new Cat();
 
-	 for (int k = 0; k < 4; k++) {
-		std::cout << "Animal" << k+1 << " of type " << animals[k]->getType() << " makes a sound: ";
-		animals[k]->makeSound();
-	 }
-	 
-	 for (int k = 0; k < 4; k++)
-	 	delete animals[k];
+	std::cout << std::endl;
+
+	for (int i = 0; i < 4; i++) {
+		std::cout << animals[i]->getType() << " makes a sound: ";
+		animals[i]->makeSound();
+	}
+
+	std::cout << std::endl;
+
+	for (int i = 0; i < 4; i++)
+		delete animals[i];
 
 	return 0;
 }

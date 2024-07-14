@@ -6,23 +6,23 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:45:15 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/14 16:36:28 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/07/12 18:22:57 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "includes/Brain.hpp"
+#include "includes/Cat.hpp"
+#include "includes/Dog.hpp"
+#include "includes/WrongAnimal.hpp"
+#include "includes/WrongCat.hpp"
+#include "includes/AAnimal.hpp"
 
 int main()
 {
-//    Animal testAnimal;
+	AAnimal test;
 
-    Animal* dog = new Dog();
-    Animal* cat = new Cat();
+    AAnimal* dog = new Dog();
+    AAnimal* cat = new Cat();
 
     std::cout << "Dog: ";
     dog->makeSound();

@@ -6,21 +6,21 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:45:15 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/07 16:53:49 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/07/10 16:07:09 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "includes/Animal.hpp"
+#include "includes/Cat.hpp"
+#include "includes/Dog.hpp"
+#include "includes/WrongAnimal.hpp"
+#include "includes/WrongCat.hpp"
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const Animal *meta = new Animal();
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
 
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
@@ -34,17 +34,17 @@ int main()
 
 	std::cout << "-----------------------------------------------------" << std::endl;
 
-	const WrongAnimal* wrongMeta = new WrongAnimal();
-	const WrongAnimal* wrongI = new WrongCat();
+	const WrongAnimal *wrongMeta = new WrongAnimal();
+	const WrongAnimal *wrongI = new WrongCat();
 
 	std::cout << wrongMeta->getType() << " " << std::endl;
 	std::cout << wrongI->getType() << " " << std::endl;
 
-	wrongI->makeSound();	
+	wrongI->makeSound();
 	wrongMeta->makeSound();
 
-	delete wrongMeta;
 	delete wrongI;
+	delete wrongMeta;
 
 	return 0;
 }
