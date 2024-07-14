@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:12:30 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/06/09 20:39:17 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/12 13:16:18 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ public:
 
 #endif
 
-// HumanA utilise une référence à Weapon:
-// car l'arme existe de la création à la 
-// destruction et ne change jamais.
+// HumanA utilise une reference a Weapon car l'arme existe
+// de la creation a la destruction et ne change jamais.

@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 16:08:46 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/06/09 21:05:14 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/12 13:34:26 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ int	main(int ac, char **av)
 	std::string filename = av[1];
 	std::string s1 = av[2];
 	std::string s2 = av[3];
+
+	if (s1.empty()){
+		std::cerr << "Error: The string to be replaced cannot be empty." << std::endl;
+		return 1;
+	}
 
 	std::ifstream inputFile(filename.c_str());
 	if (!inputFile.is_open()) {

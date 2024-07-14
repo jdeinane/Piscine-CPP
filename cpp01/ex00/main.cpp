@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:56:28 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/06/09 19:25:46 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/06/12 10:33:27 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,26 @@
 int	main() {
 	std::string zombieName;
 
-	std::cout << "Enter the heap-Zombie's name: ";
-	std::getline(std::cin, zombieName);
+	while (true) {
+		std::cout << "Enter the heap-Zombie's name: ";
+		std::getline(std::cin, zombieName);
+		if (zombieName.empty())
+			std::cerr << "Please enter a name for the Zombie." << std::endl;
+		else
+			break;
+	}
 	Zombie*	heapZombie = newZombie(zombieName);
 	heapZombie->announce();
 	delete heapZombie;
 
-	std::cout << "Enter the stack-Zombie's name: ";
-	std::getline(std::cin, zombieName);
+	while (true) {
+		std::cout << "Enter the stack-Zombie's name: ";
+		std::getline(std::cin, zombieName);
+		if (zombieName.empty())
+			std::cerr << "Please enter a name for the Zombie." << std::endl;
+		else
+			break;
+	}
 	randomChump(zombieName);
 	
 	return 0;
