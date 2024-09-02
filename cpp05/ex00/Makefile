@@ -6,13 +6,13 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 17:45:04 by jubaldo           #+#    #+#              #
-#    Updated: 2024/07/14 23:07:48 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/09/02 14:37:36 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=			Bureaucrat
 
-SRCS			=			
+SRCS			=			Bureaucrat.cpp main.cpp
 
 CC				=			c++
 
