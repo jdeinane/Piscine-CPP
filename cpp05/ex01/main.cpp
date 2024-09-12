@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:29:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/12 16:36:36 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/09/12 17:02:26 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,33 +35,35 @@ int main()
 
 		// Tests de signature
 		intern.signForm(taxForm);
+		intern.signForm(nda);
 		chief.signForm(taxForm);
+		chief.signForm(nda);
 
 		std::cout << taxForm << std::endl; // Verifier si le formulaire est signé
-
-		// Tests avec des grades hors limites
-		Bureaucrat tooHigh("Too High", 0); // Devrait lancer une exception
-		Bureaucrat tooLow("Too Low", 151); // Devrait lancer une exception
-	}
-	catch (const Bureaucrat::GradeTooHighException &e)
-	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
-	catch (const Bureaucrat::GradeTooLowException &e)
-	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
-	catch (const Form::GradeTooHighException &e)
-	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
-	catch (const Form::GradeTooLowException &e)
-	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
+		
+		// throw std::runtime_error("An intended runtime error occurred");
 	}
 	catch (const std::exception &e)
 	{
-		std::cerr << "An unexpected exception has occurred: " << e.what() << std::endl;
+		std::cerr << "Exception caught during normal operations: " << e.what() << std::endl;
+	}
+
+	try
+	{
+		Bureaucrat tooHigh("Too High", 0); // Devrait lancer une exception
+	}
+	catch (const Bureaucrat::GradeTooHighException &e)
+	{
+		std::cerr << "Exception caught for too high grade: " << e.what() << std::endl;
+	}
+
+	try
+	{
+		Bureaucrat tooLow("Too Low", 151); // Devrait lancer une exception
+	}
+	catch (const Bureaucrat::GradeTooLowException &e)
+	{
+		std::cerr << "Exception caught for too low grade: " << e.what() << std::endl;
 	}
 
 	return 0;
