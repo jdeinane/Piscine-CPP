@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:29:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/12 16:23:51 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/09/12 16:36:36 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,35 +17,51 @@ int main()
 {
 	try
 	{
-		// Create a Bureaucrat with a valid grade
-		Bureaucrat bureaucrat("Bob", 75);
-		std::cout << bureaucrat << std::endl;
+		// Création de bureaucrates
+		Bureaucrat chief("Chief", 2);
+		Bureaucrat intern("Intern", 149);
 
-		// Create a Form with a valid grade requirement
-		Form form("Application", 50, 70);
-		std::cout << form << std::endl;
+		// Affichage des informations des bureaucrates
+		std::cout << chief << std::endl;
+		std::cout << intern << std::endl;
 
-		// Sign the form
-		bureaucrat.signForm(form);
+		// Création de formulaires
+		Form taxForm("Tax Form", 5, 3);
+		Form nda("NDA Agreement", 150, 140);
 
-		// Try to sign the form again (should be already signed)
-		bureaucrat.signForm(form);
+		// Affichage des informations des formulaires
+		std::cout << taxForm << std::endl;
+		std::cout << nda << std::endl;
 
-		// Create a Bureaucrat with an invalid grade (too high)
-		Bureaucrat bureaucrat2("Alice", 0);
+		// Tests de signature
+		intern.signForm(taxForm);
+		chief.signForm(taxForm);
 
-		// Create a Form with an invalid grade requirement (too low)
-		Form form2("Useless Paper", 151, 151);
+		std::cout << taxForm << std::endl; // Verifier si le formulaire est signé
 
-		// Try to sign the form with the invalid bureaucrat
-		bureaucrat2.signForm(form);
-
-		// Try to sign the form with the invalid grade requirement
-		bureaucrat.signForm(form2);
+		// Tests avec des grades hors limites
+		Bureaucrat tooHigh("Too High", 0); // Devrait lancer une exception
+		Bureaucrat tooLow("Too Low", 151); // Devrait lancer une exception
+	}
+	catch (const Bureaucrat::GradeTooHighException &e)
+	{
+		std::cerr << "Exception caught: " << e.what() << std::endl;
+	}
+	catch (const Bureaucrat::GradeTooLowException &e)
+	{
+		std::cerr << "Exception caught: " << e.what() << std::endl;
+	}
+	catch (const Form::GradeTooHighException &e)
+	{
+		std::cerr << "Exception caught: " << e.what() << std::endl;
+	}
+	catch (const Form::GradeTooLowException &e)
+	{
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 	catch (const std::exception &e)
 	{
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "An unexpected exception has occurred: " << e.what() << std::endl;
 	}
 
 	return 0;
