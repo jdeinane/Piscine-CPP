@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 23:08:01 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/02 14:17:45 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/09/12 15:37:57 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ private:
 	void checkGrade(int grade);
 
 public:
+	Bureaucrat();
 	Bureaucrat(const std::string& name, int grade);
 	Bureaucrat(const Bureaucrat& other);
 	Bureaucrat& operator=(const Bureaucrat& other);

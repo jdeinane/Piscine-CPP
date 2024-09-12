@@ -6,11 +6,13 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 12:41:35 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/02 14:37:27 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/09/12 15:38:09 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade(grade) {
 	checkGrade(grade);
