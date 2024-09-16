@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:29:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/12 17:02:26 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/09/16 11:07:49 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,28 @@ int main()
 {
 	try
 	{
-		// Création de bureaucrates
 		Bureaucrat chief("Chief", 2);
 		Bureaucrat intern("Intern", 149);
 
-		// Affichage des informations des bureaucrates
+		// bureaucrats infos
 		std::cout << chief << std::endl;
 		std::cout << intern << std::endl;
 
-		// Création de formulaires
+		// forms creation
 		Form taxForm("Tax Form", 5, 3);
 		Form nda("NDA Agreement", 150, 140);
 
-		// Affichage des informations des formulaires
+		// forms infos
 		std::cout << taxForm << std::endl;
 		std::cout << nda << std::endl;
 
-		// Tests de signature
+		// sign tests
 		intern.signForm(taxForm);
 		intern.signForm(nda);
 		chief.signForm(taxForm);
 		chief.signForm(nda);
 
-		std::cout << taxForm << std::endl; // Verifier si le formulaire est signé
+		std::cout << taxForm << std::endl; // check if form is sign
 		
 		// throw std::runtime_error("An intended runtime error occurred");
 	}
@@ -50,7 +49,7 @@ int main()
 
 	try
 	{
-		Bureaucrat tooHigh("Too High", 0); // Devrait lancer une exception
+		Bureaucrat tooHigh("Too High", 0); // should throw an exceptions
 	}
 	catch (const Bureaucrat::GradeTooHighException &e)
 	{
@@ -59,7 +58,7 @@ int main()
 
 	try
 	{
-		Bureaucrat tooLow("Too Low", 151); // Devrait lancer une exception
+		Bureaucrat tooLow("Too Low", 151); // should throw an exceptions
 	}
 	catch (const Bureaucrat::GradeTooLowException &e)
 	{

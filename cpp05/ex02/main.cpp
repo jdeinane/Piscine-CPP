@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:29:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/16 09:52:21 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/09/16 10:59:15 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,36 +20,32 @@ int main()
 {
 	try
 	{
-		// Création des bureaucrates avec différents grades
-		Bureaucrat chief("Chief", 1);					// Très haut grade
-		Bureaucrat intern("Intern", 150);				// Très bas grade
-		Bureaucrat middleManager("Middle Manager", 72); // Grade intermédiaire
+		Bureaucrat chief("Chief", 1);
+		Bureaucrat intern("Intern", 150);
+		Bureaucrat middleManager("Middle Manager", 72);
 
-		// Création des formulaires
 		ShrubberyCreationForm shrubberyForm("Home");
 		RobotomyRequestForm robotomyForm("Bender");
 		PresidentialPardonForm pardonForm("Arthur Dent");
 
-		// Tentative de signature et d'exécution par différents bureaucrates
-		std::cout << "\n--- TEST DE SHRUBBERY CREATION FORM ---" << std::endl;
-		intern.signForm(shrubberyForm);	  // Échec de la signature car le grade est trop bas
-		chief.signForm(shrubberyForm);	  // Succès de la signature
-		chief.executeForm(shrubberyForm); // Exécution réussie par un grade élevé
+		std::cout << "\n--- SHRUBBERY CREATION FORM ---" << std::endl;
+		intern.signForm(shrubberyForm);
+		chief.signForm(shrubberyForm);
+		chief.executeForm(shrubberyForm);
 
-		std::cout << "\n--- TEST DE ROBOTOMY REQUEST FORM ---" << std::endl;
-		middleManager.signForm(robotomyForm);	 // Succès de la signature
-		chief.executeForm(robotomyForm); // Succès ou échec aléatoire de la robotomisation
+		std::cout << "\n--- ROBOTOMY REQUEST FORM ---" << std::endl;
+		middleManager.signForm(robotomyForm);
+		chief.executeForm(robotomyForm);
 
-		std::cout << "\n--- TEST DE PRESIDENTIAL PARDON FORM ---" << std::endl;
-		intern.signForm(pardonForm);   // Échec de la signature car grade trop bas
-		chief.signForm(pardonForm);	   // Succès de la signature
-		chief.executeForm(pardonForm); // Succès de l'exécution du pardon
+		std::cout << "\n--- PRESIDENTIAL PARDON FORM ---" << std::endl;
+		intern.signForm(pardonForm);
+		chief.signForm(pardonForm);
+		chief.executeForm(pardonForm);
 
-		// Test avec des grades hors limites
-		std::cout << "\n--- TEST DES EXCEPTIONS DE GRADES HORS LIMITES ---" << std::endl;
+		std::cout << "\n--- EXCEPTINS TEST ---" << std::endl;
 		try
 		{
-			Bureaucrat tooHigh("Too High", 0); // Devrait lever une exception
+			Bureaucrat tooHigh("Too High", 0);
 		}
 		catch (const std::exception &e)
 		{
@@ -58,7 +54,7 @@ int main()
 
 		try
 		{
-			Bureaucrat tooLow("Too Low", 151); // Devrait lever une exception
+			Bureaucrat tooLow("Too Low", 151);
 		}
 		catch (const std::exception &e)
 		{
