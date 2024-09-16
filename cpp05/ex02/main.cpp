@@ -6,13 +6,13 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:29:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/12 18:36:30 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/09/16 09:52:21 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "ShrubberryCreationForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
@@ -26,7 +26,7 @@ int main()
 		Bureaucrat middleManager("Middle Manager", 72); // Grade intermédiaire
 
 		// Création des formulaires
-		ShrubberryCreationForm shrubberyForm("Home");
+		ShrubberyCreationForm shrubberyForm("Home");
 		RobotomyRequestForm robotomyForm("Bender");
 		PresidentialPardonForm pardonForm("Arthur Dent");
 

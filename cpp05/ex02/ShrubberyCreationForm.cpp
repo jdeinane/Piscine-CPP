@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberryCreationForm.cpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,41 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberryCreationForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-ShrubberryCreationForm::ShrubberryCreationForm() : AForm("ShrubberryCreationForm", 145, 137), _target("default target")
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), _target("default target")
 {
 }
 
-ShrubberryCreationForm::ShrubberryCreationForm(std::string const &target) : AForm("ShrubberryCreationForm", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
 }
 
-ShrubberryCreationForm::ShrubberryCreationForm(ShrubberryCreationForm const &other) : AForm(other), _target(other._target)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other) : AForm(other), _target(other._target)
 {
 }
 
-ShrubberryCreationForm &ShrubberryCreationForm::operator=(ShrubberryCreationForm const &other) {
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &other) {
 	AForm::operator=(other);
 	if (this != &other)
 		this->_target = other._target;
 	return *this;
 }
 
-ShrubberryCreationForm::~ShrubberryCreationForm() {
+ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
-std::string const &ShrubberryCreationForm::getTarget() const {
+std::string const &ShrubberyCreationForm::getTarget() const {
 	return _target;
 }
 
-void ShrubberryCreationForm::execute(Bureaucrat const &executor) const {
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 	if (!this->getSigned())
 		throw::AForm::FormNotSignedException();
 	if (executor.getGrade() > this->getGradeExec())
 		throw AForm::GradeTooLowException();
 	
-	std::ofstream ofs((_target + "_shrubberry").c_str());
+	std::ofstream ofs((_target + "_Shrubbery").c_str());
 
 	if (!ofs) {
 		throw std::runtime_error("Failed to open file.");
@@ -59,5 +59,5 @@ void ShrubberryCreationForm::execute(Bureaucrat const &executor) const {
 	ofs << "       }|{\n";
 	
 	ofs.close();
-	std::cout << "Shrubberry Creation Form executed by " << executor.getName() << std::endl;
+	std::cout << "Shrubbery Creation Form executed by " << executor.getName() << std::endl;
 }

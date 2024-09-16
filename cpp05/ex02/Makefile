@@ -6,13 +6,13 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 17:45:04 by jubaldo           #+#    #+#              #
-#    Updated: 2024/09/12 18:19:36 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/09/16 09:52:10 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=			Bureaucrat
 
-SRCS			=			Bureaucrat.cpp AForm.cpp ShrubberryCreationForm.cpp \
+SRCS			=			Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
 							PresidentialPardonForm.cpp RobotomyRequestForm.cpp main.cpp
 
 CC				=			c++
