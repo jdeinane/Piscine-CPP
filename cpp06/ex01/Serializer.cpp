@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 11:09:32 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/18 11:10:49 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/09/18 11:14:58 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,10 @@ Serializer &Serializer::operator=(Serializer const &other) {
 
 Serializer::~Serializer() {}
 
+uintptr_t Serializer::serialize(Data* ptr) {
+	return reinterpret_cast<uintptr_t>(ptr);	// convertit le pointeur en entier
+}
+
+Data* Serializer::deserialize(uintptr_t raw) {
+	return reinterpret_cast<Data*> (raw);		// convertit l'entier en pointeur
+}

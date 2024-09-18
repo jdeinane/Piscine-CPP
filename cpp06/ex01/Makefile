@@ -6,13 +6,13 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/17 16:15:34 by jubaldo           #+#    #+#              #
-#    Updated: 2024/09/17 17:34:01 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/09/18 11:24:25 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=			seralize	
 
-SRCS			=			 main.cpp
+SRCS			=			Serializer.cpp main.cpp
 
 CC				=			c++
 
