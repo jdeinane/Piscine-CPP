@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 18:10:23 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/18 11:09:05 by jubaldo          ###   ########.fr       */
+/*   Created: 2024/09/18 11:09:32 by jubaldo           #+#    #+#             */
+/*   Updated: 2024/09/18 11:10:49 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-# define DATA_HPP
+#include "Serializer.hpp"
 
-#include <string>
+Serializer::Serializer() {}
 
-struct Data {
-	int id;
-	std::string name;
-};
+Serializer::Serializer(Serializer const &other) {
+	*this = other;
+}
 
-#endif
+Serializer &Serializer::operator=(Serializer const &other) {
+	(void)other;
+	return *this;
+}
+
+Serializer::~Serializer() {}
+

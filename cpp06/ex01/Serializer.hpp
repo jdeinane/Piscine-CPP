@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 18:05:44 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/17 18:11:31 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/09/18 11:11:25 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Serializer {
 	~Serializer();
 
 	public:
-	uintptr_t serailize(Data* ptr);
-	Data* deserialize(uintptr_t raw);
+	static uintptr_t serialize(Data* ptr);
+	static Data* deserialize(uintptr_t raw);
 };
 
 #endif
