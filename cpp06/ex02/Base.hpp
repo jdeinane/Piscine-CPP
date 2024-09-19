@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 11:36:20 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/18 11:37:45 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/09/18 15:25:00 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 class Base {
 	public:

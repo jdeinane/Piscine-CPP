@@ -6,13 +6,13 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/17 16:15:34 by jubaldo           #+#    #+#              #
-#    Updated: 2024/09/18 11:36:06 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/09/18 15:01:28 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=			identify	
 
-SRCS			=			.cpp main.cpp
+SRCS			=			Base.cpp Functions.cpp main.cpp
 
 CC				=			c++
 
