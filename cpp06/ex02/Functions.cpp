@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:58:29 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/19 18:23:55 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/09/19 18:33:25 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "C.hpp"
 #include <cstdlib>
 #include <ctime>
-
+#include <string>
 
 Base* generate(void) {
 	int randValue = std::rand() % 3;
@@ -35,11 +35,15 @@ Base* generate(void) {
 }
 
 void identify(Base* p) {
-	if (dynamic_cast<A*>(p))
+	if (p == NULL) {
+		std::cout << "Pointer is null" << std::endl;
+		return;
+	}
+	if (dynamic_cast<A*>(p) != NULL)
 		std::cout << "Pointer: A" << std::endl;
-	else if (dynamic_cast<B*>(p))
+	else if (dynamic_cast<B*>(p) != NULL)
 		std::cout << "Pointer: B" << std::endl;
-	else if (dynamic_cast<C*>(p))
+	else if (dynamic_cast<C*>(p) != NULL)
 		std::cout << "Pointer: C" << std::endl;
 	else
 		std::cout << "Pointer: Unkown type" << std::endl;
