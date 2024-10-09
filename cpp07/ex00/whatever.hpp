@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 12:37:08 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/20 13:45:19 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/10/04 16:56:09 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,4 @@ T max(T param1, T param2) {
 		return param1;
 	return param2;
 }
-
 #endif
