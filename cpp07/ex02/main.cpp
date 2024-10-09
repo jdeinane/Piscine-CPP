@@ -6,13 +6,13 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:04:18 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/10/09 17:24:07 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/10/09 17:30:09 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-#define MAX_VAL 750
+#define MAX_VAL 10
 
 int main()
 {
