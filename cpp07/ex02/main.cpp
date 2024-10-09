@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:04:18 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/10/09 17:12:59 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/10/09 17:24:07 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int main()
 			std::cerr << "Error : Deep copy failed between `tmp` and `numbers`." << std::endl;
 		else
 			std::cout << "Deep copy success for `tmp`." << std::endl;
-
 		test[0] = 555;
 		if (numbers[0] == 555)
 			std::cerr << "Error : Deep copy failed between `tmp` and `numbers`.." << std::endl;
@@ -74,3 +73,26 @@ int main()
 	
 	return 0;
 }
+
+// int main()
+// {
+// 	unsigned int n = 5;	   // Taille du tableau
+// 	Array<int> numbers(n); // Crée un tableau de 5 entiers
+
+// 	// Affiche les valeurs par défaut
+// 	std::cout << "Vérification de l'initialisation par défaut pour int :" << std::endl;
+// 	for (unsigned int i = 0; i < n; i++)
+// 	{
+// 		std::cout << "numbers[" << i << "] = " << numbers[i] << std::endl;
+// 	}
+
+// 	// Test avec un type complexe, par exemple une chaîne de caractères
+// 	Array<std::string> strings(n);
+// 	std::cout << "\nVérification de l'initialisation par défaut pour std::string :" << std::endl;
+// 	for (unsigned int i = 0; i < n; i++)
+// 	{
+// 		std::cout << "strings[" << i << "] = \"" << strings[i] << "\"" << std::endl;
+// 	}
+
+// 	return 0;
+// }
