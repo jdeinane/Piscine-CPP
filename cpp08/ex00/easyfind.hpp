@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:07:43 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/10/11 18:43:58 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/10/14 11:13:05 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,13 @@
 #include <exception>
 
 template <typename T>
-T easyfind(std::vector<int> &array, int n) {
-	try {
-		auto it = find(array.begin(), array.end(), n);
-		if (it != array.end()) 
-			std::cout << "The first occurence of " << n << " is at index: "
-			<< it - array.begin() << std::endl;
-		else
-			throw "Occurence not found";
-	}
-	catch (const char* e) 
-		std::cout << "Error: " << e << std::endl;
+void easyfind(T &container, int n) {
+	typename T::iterator it = find(container.begin(), container.end(), n);
+	if (it != container.end()) 
+		std::cout << "The first occurence of " << n << " is at index: "
+			<< it - container.begin() << std::endl;
+	else
+		throw std::runtime_error("Occurence not found");
 };
 
 #endif

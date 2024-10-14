@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 17:08:33 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/10/11 18:44:08 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/10/14 11:14:36 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,20 @@
 
 int main()
 {
-	std::vector<int> array = {4, 2, 3, 9, 1};
-	int n = 3;
+	std::vector<int> array;
 
-	easyfind(array, n);
+	array.push_back(4);
+	array.push_back(3);
+	array.push_back(6);
+	array.push_back(1);
+	
+	int n = 6;
+
+	try {
+		easyfind(array, n);
+	}
+	catch (const std::exception &e) {
+		std::cout << "Error: " << e.what() << std::endl;
+	}
 	return 0;
 }
