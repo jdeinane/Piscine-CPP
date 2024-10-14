@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:07:43 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/10/14 11:13:05 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/10/14 11:32:53 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void easyfind(T &container, int n) {
 		std::cout << "The first occurence of " << n << " is at index: "
 			<< it - container.begin() << std::endl;
 	else
-		throw std::runtime_error("Occurence not found");
+		throw std::runtime_error("Element not found");
 };
 
 #endif
