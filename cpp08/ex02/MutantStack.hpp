@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:03:35 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/11/04 17:07:32 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/11/04 17:47:52 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,15 @@ class MutantStack : public std::stack<T> {
 	}
 	~MutantStack() {}
 
-	// types d'iterateurs bases sur le conteneur sous-jacent de std::stack
+	// types d'iterateurs basés sur le conteneur sous-jacent de std::stack
+	// en utilisant container_type, on accede aux types d'itérateurs de ce conteneur
 	typedef typename std::stack<T>::container_type::iterator iterator;
 	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 	typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
 	typedef typename std::stack<T>::container_type::const_reverse_iterator const_reverse_iterator;
 
 	iterator begin() {
-		return this->c.begin();
+		return this->c.begin(); // 'c' est un membre protégé de std::stack, utilisé pour accéder au conteneur sous-jacent
 	}
 	iterator end() {
 		return this->c.end();
