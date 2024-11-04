@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:39:57 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/11/04 14:36:46 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/11/04 15:29:41 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <exception>
 #include <climits>
 #include <unistd.h>
+#include <set>
 
 class Span {
 	private:
@@ -31,9 +32,14 @@ class Span {
 	~Span();
 
 	void addNumber(int number);
-	void addNumberImproved(void);
 	int shortestSpan();
 	int longestSpan();
+
+	template <typename inputIterator>
+	void addRange(inputIterator begin, inputIterator end);
+	void randomFill(unsigned int count);
+
+	const std::vector<int> &getNumbers() const;
 };
 
 
