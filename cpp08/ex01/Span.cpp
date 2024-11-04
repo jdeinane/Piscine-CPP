@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:39:54 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/11/04 15:45:01 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/11/04 17:55:58 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@ void Span::addNumber(int number) {
 	if (numbers.size() >= max_size)
 		throw std::out_of_range("Span is already full.");
 	numbers.push_back(number);
+}
+
+Span::Span(const Span &other) : numbers(other.numbers), max_size(other.max_size) {}
+
+Span &Span::operator=(const Span &other) {
+	if (this != &other) {
+		numbers = other.numbers;
+		max_size = other.max_size;
+	}
+	return *this;
 }
 
 int Span::shortestSpan() {
