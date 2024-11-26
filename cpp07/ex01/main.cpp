@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 13:48:25 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/20 14:03:13 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/11/26 15:08:21 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,9 @@ int main() {
 	std::string str[] = {"Hello", "World", "!"};
 	std::cout << "String array: " << std::endl;
 	::iter(str, 3, printElement);
+
+	float floatArray[] = {1.4321, 5.32, 6.2};
+	std::cout << "Float array:" << std::endl;
+	::iter(floatArray, 3, increment<float>); // la fonction template increment est instanciee pour le type float
+	::iter(floatArray, 3, printElement);
 }

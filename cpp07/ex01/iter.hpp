@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 13:48:40 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/09/20 14:01:09 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/11/26 15:08:04 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ void printElement(T& element) {
 	std::cout << element << std::endl;
 }
 
-void increment(int &n) {
+template <typename T> // ne fonctionnera qu'avec les types pour lequel n++ est valide
+void increment(T &n)
+{
 	n++;
 }
 
