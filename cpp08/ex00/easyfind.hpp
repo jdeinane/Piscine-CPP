@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:07:43 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/12/05 16:02:36 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/12/05 16:46:56 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <algorithm>
 #include <exception>
 #include <iterator>
+#include <deque>
+#include <list>
 
 template <typename T>
 void easyfind(T &container, int n) {
@@ -37,6 +39,7 @@ void easyfind(T &container, int n) {
 	
 	else
 		throw std::runtime_error("Element not found");
+
 };
 
 #endif
