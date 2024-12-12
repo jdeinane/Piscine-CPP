@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:03:42 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/11/04 17:26:54 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/12/12 14:14:48 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 int main()
 {
 	MutantStack<int> mstack;
+	
 	mstack.push(5);
 	mstack.push(17);
 	
 	std::cout << mstack.top() << std::endl;
+
 	mstack.pop();
+	
 	std::cout << mstack.size() << std::endl;
 	
 	mstack.push(3);
@@ -79,6 +82,20 @@ int main()
 	}
 	std::cout << std::endl;
 
+	std::cout << "Test de la mstack avec des strings :" << std::endl;
+	MutantStack<std::string> mstackString;
+	mstackString.push("Hello");
+	mstackString.push("World");
+	mstackString.push("!");
+	
+	MutantStack<std::string>::iterator iit = mstackString.begin();
+	MutantStack<std::string>::iterator iite = mstackString.end();
+
+	while (iit != iite) {
+		std::cout << *iit << std::endl;
+		iit++;
+	}
+	
 	return 0;
 }
 
