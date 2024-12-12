@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:07:43 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/12/05 16:46:56 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/12/05 17:07:50 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ void easyfind(T &container, int n) {
 	
 	if (it != container.end()) {
 		std::cout << "The first occurence of " << n << " is at index: "
-					// revient a ecrire it - container.begin() mais cela ne 
-					// fonctionnerait pas pour les lists et les sets 
-					//(iterateurs bidirectionnels)
+					// revient a ecrire it - container.begin()
 			<< std::distance(container.begin(), it) << std::endl;
 	}
 	

@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:39:57 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/11/04 17:53:23 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/12/05 19:10:19 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ class Span {
 	int shortestSpan();
 	int longestSpan();
 
-	template <typename inputIterator>
-	void addRange(inputIterator begin, inputIterator end);
 	void randomFill(unsigned int count);
 
 	const std::vector<int> &getNumbers() const;

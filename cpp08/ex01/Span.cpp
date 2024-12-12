@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:39:54 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/12/05 18:34:41 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/12/12 15:54:41 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,6 @@ int Span::longestSpan()
 	int max = *std::max_element(numbers.begin(), numbers.end());
 
 	return max - min;
-}
-
-template <typename inputIterator>
-
-void Span::addRange(inputIterator begin, inputIterator end) {
-	if (std::distance(begin, end) > static_cast<int>(max_size - numbers.size()))
-		throw std::out_of_range("Not enough space in Span to add all random elements.");
-	numbers.insert(numbers.end(), begin, end);
 }
 
 void Span::randomFill(unsigned int count)
