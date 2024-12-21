@@ -6,14 +6,15 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 22:44:44 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/12/21 22:45:13 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/12/21 22:50:10 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RNP_HPP
 # define RPN_HPP
 
-
-
+class RPN {
+    
+};
 
 #endif
