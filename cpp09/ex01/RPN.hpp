@@ -5,16 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/21 22:44:44 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/12/21 22:50:10 by jubaldo          ###   ########.fr       */
+/*   Created: 2025/01/06 13:09:57 by jubaldo           #+#    #+#             */
+/*   Updated: 2025/01/06 16:18:14 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RNP_HPP
+#ifndef RPN_HPP
 # define RPN_HPP
 
+#include <string>
+#include <iostream>
+#include <stack>
+#include <sstream>
+#include <stdexcept>
+
 class RPN {
-    
+    private:
+    std::stack<int> _stack;
+
+	RPN(RPN const &other);
+	RPN &operator=(RPN const &other);
+
+	public:
+	RPN();
+	~RPN();
+
+    bool isOperator(const std::string &token);
+    int applyOperation(int a, int b, const std::string &op);
+    int evaluateRPN(const std::string &expression);
 };
 
 #endif
