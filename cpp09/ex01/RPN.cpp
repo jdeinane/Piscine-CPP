@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 13:09:50 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/06 17:42:54 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/07 14:10:46 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int RPN::evaluateRPN(const std::string &expression) {
             try {
                 std::istringstream tokenStream(token);
                 int number;
-                if (!(tokenStream >> number))
+                if (!(tokenStream >> number) || number < 0 || number > 9)
                     throw std::runtime_error("Error: Invalid token.");
                 _stack.push(number);
             } catch (...) {
