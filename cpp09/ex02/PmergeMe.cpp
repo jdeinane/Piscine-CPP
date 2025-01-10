@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:51:35 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/10 16:35:26 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/10 19:22:47 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,28 @@ PmergeMe &PmergeMe::operator=(PmergeMe const &other) {
 
 PmergeMe::~PmergeMe() {}
 
+int PmergeMe::stringToInt(const std::string &str) {
+	std::stringstream ss(str);
+	int number;
+	ss >> number;
+	if (ss.fail() || !ss.eof()) {
+		throw std::invalid_argument("Error: Invalid input. NOt a valid integer.");
+	}
+	return number;
+}
+
+bool PmergeMe::isDigitOnly(const std::string &str) {
+	for (std::string::const_iterator it = str.begin(); it != str.end(); it++) {
+		if (!std::isdigit((*it)))
+			return false;
+	}
+	return true;
+}
+
 void PmergeMe::validateNumber(const std::string &number) const {
 	if (number.empty() || !std::all_of(number.begin(), number.end(), ::isdigit)) {
 		throw std::invalid_argument("Error: Invalid input. Only positive integers are allowed.");
 	}
-}
-
-void PmergeMe::removeDuplicates(std::vector<int> &container) {
-	std::sort(container.begin(), container.end());
-	container.erase(std::unique(container.begin(), container.end(), container.end()));
-}
-
-void PmergeMe::removeDuplicates(std::deque<int> &container) {
-	// Convertir le deque en vector pour faciliter le tri
-	std::vector<int> temp(container.begin(), container.end());
-	
-	std::sort(temp.begin(), temp.end());
-	temp.erase(std::unique(temp.begin(), temp.end(), temp.end()));
-
-	// Reconstruire le deque a partir du vector
-	container.assign(temp.begin(), temp.end());
 }
 
 void PmergeMe::mergeInsertSortVector(std::vector<int> &container) {
@@ -81,7 +83,13 @@ void PmergeMe::parseInput(int ac, char **av) {
 		std::string numberStr = av[i];
 		validateNumber(numberStr);
 
-		int number = std::stoi(numberStr);
+		int number = stringToInt(numberStr);
+
+		if (std::find(_vector.begin(), _vector.end(), number) != _vector.end() ||
+			std::find(_deque.begin(), _deque.end(), number) != _deque.end()) {
+			throw std::invalid_argument("Error: Duplicate number detected: " + numberStr);
+		}
+		
 		_vector.push_back(number);
 		_deque.push_back(number);
 	}
@@ -92,33 +100,33 @@ void PmergeMe::execute(int ac, char **av) {
 
 	// Etape 1: Analyse des arguments
 	std::cout << "Before: ";
-	for (int num : _vector) {
-		std::cout << num << " ";
+	for (std::vector<int>::iterator it = _vector.begin(); it != _vector.end(); it++) {
+		std::cout << *it << " ";
 	}
 	std::cout << std::endl;
 
 	// Etape 2: Tri avec std::vector
-	auto startVec = std::chrono::high_resolution_clock::now();
+	clock_t startVec = clock();
 	mergeInsertSortVector(_vector);
-	auto endVec = std::chrono::high_resolution_clock::now();
-	std::chrono::duration<double, std::micro> durationVec = endVec - startVec;
+	clock_t endVec = clock();
+	double durationVec = static_cast<double>(endVec - startVec) / CLOCKS_PER_SEC;
 
 	// Etape 3: Tri avec std::deque
-	auto startDeq = std::chrono::high_resolution_clock::now();
+	clock_t startDeq = clock();
 	mergeInsertSortDeque(_deque);
-	auto endDeq = std::chrono::high_resolution_clock::now();
-	std::chrono::duration<double, std::micro> durationDeq = endDeq - startDeq;
+	clock_t endDeq = clock();
+	double durationDeq = static_cast<double>(endDeq - startDeq) / CLOCKS_PER_SEC;
 
 	// Afficher la sequence triee
 	std::cout << "After: ";
-	for (int num : _vector) {
-		std::cout << num << " ";
+	for (std::vector<int>::iterator it = _vector.begin(); it != _vector.end(); it++) {
+		std::cout << *it << " ";
 	}
 	std::cout << std::endl;
 
 	// Afficher les temps d'execution
 	std::cout << "Time to process a range of " << _vector.size()
-			<< " elements with std::vector: " << durationVec.count() << " us" << std::endl;
+			<< " elements with std::vector: " << (durationVec * 1e6) << " us" << std::endl;
 	std::cout << "Time to process a range of " << _deque.size()
-			<< " elements with std::deque: " << durationDeq.count() << " us" << std::endl;
+			<< " elements with std::deque: " << (durationDeq * 1e6) << " us" << std::endl;
 }
