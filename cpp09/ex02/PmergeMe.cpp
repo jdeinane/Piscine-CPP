@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:51:35 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/10 23:48:15 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/11 00:44:15 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,11 +136,12 @@ void PmergeMe::mergeInsertSortVector(std::vector<int> &container) {
 	std::vector<int> insertionOrder = generateInsertionOrder(pairs.size());
 	for (size_t i = 0; i < insertionOrder.size(); i++) {
 		int idx = insertionOrder[i];
-		if (idx < pairs.size() && pairs[idx].first != INT_MAX) {
+		if (idx < static_cast<int>(pairs.size()) && pairs[idx].first != INT_MAX) {
 			std::vector<int>::iterator pos = std::lower_bound(mainSeq.begin(), mainSeq.end(), pairs[idx].first);
 			mainSeq.insert(pos, pairs[idx].first);
 		}
 	}
+	mainSeq.erase(std::remove(mainSeq.begin(), mainSeq.end(), INT_MAX), mainSeq.end());
 	container = mainSeq;
 }
 
@@ -175,11 +176,12 @@ void PmergeMe::mergeInsertSortDeque(std::deque<int> &container) {
 	std::vector<int> insertionOrder = generateInsertionOrder(pairs.size());
 	for (size_t i = 0; i < insertionOrder.size(); i++) {
 		int idx = insertionOrder[i];
-		if (idx < pairs.size() && pairs[idx].first != INT_MAX) {
+		if (idx < static_cast<int>(pairs.size()) && pairs[idx].first != INT_MAX) {
 			std::deque<int>::iterator pos = std::lower_bound(mainSeq.begin(), mainSeq.end(), pairs[idx].first);
 			mainSeq.insert(pos, pairs[idx].first);
 		}
 	}
+	mainSeq.erase(std::remove(mainSeq.begin(), mainSeq.end(), INT_MAX), mainSeq.end());
 	container = mainSeq;
 }
 
