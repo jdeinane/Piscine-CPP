@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:51:35 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/10 15:50:01 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/10 16:35:26 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,22 @@ void PmergeMe::validateNumber(const std::string &number) const {
 	if (number.empty() || !std::all_of(number.begin(), number.end(), ::isdigit)) {
 		throw std::invalid_argument("Error: Invalid input. Only positive integers are allowed.");
 	}
+}
+
+void PmergeMe::removeDuplicates(std::vector<int> &container) {
+	std::sort(container.begin(), container.end());
+	container.erase(std::unique(container.begin(), container.end(), container.end()));
+}
+
+void PmergeMe::removeDuplicates(std::deque<int> &container) {
+	// Convertir le deque en vector pour faciliter le tri
+	std::vector<int> temp(container.begin(), container.end());
+	
+	std::sort(temp.begin(), temp.end());
+	temp.erase(std::unique(temp.begin(), temp.end(), temp.end()));
+
+	// Reconstruire le deque a partir du vector
+	container.assign(temp.begin(), temp.end());
 }
 
 void PmergeMe::mergeInsertSortVector(std::vector<int> &container) {

@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:51:33 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/10 15:01:57 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/10 16:14:54 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class PmergeMe {
 	void parseInput(int ac, char **av);
 	void validateNumber(const std::string& number) const;
 	void removeDuplicates(std::vector<int>& container);
+	void removeDuplicates(std::deque<int>& container);
 
 	void mergeInsertSortVector(std::vector<int> &container);
 	void mergeInsertSortDeque(std::deque<int>& container);
