@@ -6,11 +6,11 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:51:09 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/10 18:57:06 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/10 19:47:50 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PmergeMe.cpp"
+#include "PmergeMe.hpp"
 
 int main(int ac, char **av) {
 	try {

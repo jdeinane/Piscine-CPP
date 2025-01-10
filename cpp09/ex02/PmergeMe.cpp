@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:51:35 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/10 19:22:47 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/10 19:50:27 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ int PmergeMe::stringToInt(const std::string &str) {
 	int number;
 	ss >> number;
 	if (ss.fail() || !ss.eof()) {
-		throw std::invalid_argument("Error: Invalid input. NOt a valid integer.");
+		throw std::invalid_argument("Error: Invalid input. Not a valid integer.");
 	}
 	return number;
 }
 
-bool PmergeMe::isDigitOnly(const std::string &str) {
+bool PmergeMe::isDigitOnly(const std::string &str) const {
 	for (std::string::const_iterator it = str.begin(); it != str.end(); it++) {
 		if (!std::isdigit((*it)))
 			return false;
@@ -44,8 +44,8 @@ bool PmergeMe::isDigitOnly(const std::string &str) {
 }
 
 void PmergeMe::validateNumber(const std::string &number) const {
-	if (number.empty() || !std::all_of(number.begin(), number.end(), ::isdigit)) {
-		throw std::invalid_argument("Error: Invalid input. Only positive integers are allowed.");
+	if (number.empty() || !isDigitOnly(number)) {
+		throw std::invalid_argument("Error");
 	}
 }
 

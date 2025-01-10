@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:51:33 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/10 19:23:40 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/10 19:46:20 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <deque>
 #include <sstream>
 #include <stdexcept>
-#include <chrono>
+#include <ctime>
 #include <algorithm>
 
 class PmergeMe {
@@ -31,7 +31,7 @@ class PmergeMe {
 	PmergeMe &operator=(PmergeMe const &other);
 
 	int stringToInt(const std::string&);
-	bool isDigitOnly(const std::string&);
+	bool isDigitOnly(const std::string&) const;
 
 	void parseInput(int ac, char **av);
 	void validateNumber(const std::string& number) const;
