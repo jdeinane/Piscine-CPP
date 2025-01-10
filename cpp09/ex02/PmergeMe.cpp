@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:51:35 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/10 19:50:27 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/10 23:33:21 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,52 @@ void PmergeMe::validateNumber(const std::string &number) const {
 	}
 }
 
+// Analyse et stockage des entrees dans les conteneurs
+void PmergeMe::parseInput(int ac, char **av) {
+	for (int i = 1; i < ac; i++) {
+		std::string numberStr = av[i];
+		validateNumber(numberStr);
+
+		int number = stringToInt(numberStr);
+
+		if (std::find(_vector.begin(), _vector.end(), number) != _vector.end() ||
+			std::find(_deque.begin(), _deque.end(), number) != _deque.end()) {
+			throw std::invalid_argument("Error: Duplicate number detected: " + numberStr);
+		}
+		
+		_vector.push_back(number);
+		_deque.push_back(number);
+	}
+}
+
+// Genere l'ordre d'insertion base sur les puissances de deux
+std::vector<int> PmergeMe::generateInsertionOrder(int size) {
+	std::vector<int> order;
+	int power = 1;
+
+	while (power<= size) {
+		order.push_back(power);
+		power *= 2;
+	}
+	
+	for (int i = 1; i <= size; i++) {
+		if (std::find(order.begin(), order.end(), i) == order.end())
+			order.push_back(i);
+	}
+	return order;
+}
+
+// Insere les petits elements dans la sequence triee
+void PmergeMe::insertSmallerElements(std::vector<int>& S, const std::vector<std::pair<int, int>> &pairs) {
+	for (size_t i = 0; i < pairs.size(); i++) {
+		int small = pairs[i].first;
+		if (small != INT_MAX) {
+			std::vector<int>::iterator pos = std::lower_bound(S.begin(), S.end(), small);
+			S.insert(pos, small);
+		}
+	}
+}
+
 void PmergeMe::mergeInsertSortVector(std::vector<int> &container) {
 	if (container.size() <= 1)
 		return;
@@ -75,24 +121,6 @@ void PmergeMe::mergeInsertSortDeque(std::deque<int> &container) {
 
 	container.clear();
 	std::merge(left.begin(), left.end(), right.begin(), right.end(), std::back_inserter(container));
-}
-
-// Analyse et stockage des entrees dans les conteneurs
-void PmergeMe::parseInput(int ac, char **av) {
-	for (int i = 1; i < ac; i++) {
-		std::string numberStr = av[i];
-		validateNumber(numberStr);
-
-		int number = stringToInt(numberStr);
-
-		if (std::find(_vector.begin(), _vector.end(), number) != _vector.end() ||
-			std::find(_deque.begin(), _deque.end(), number) != _deque.end()) {
-			throw std::invalid_argument("Error: Duplicate number detected: " + numberStr);
-		}
-		
-		_vector.push_back(number);
-		_deque.push_back(number);
-	}
 }
 
 void PmergeMe::execute(int ac, char **av) {

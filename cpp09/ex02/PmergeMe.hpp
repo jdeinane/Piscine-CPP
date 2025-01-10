@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:51:33 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/10 19:46:20 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/10 23:32:54 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 #include <sstream>
 #include <stdexcept>
 #include <ctime>
+#include <utility>
 #include <algorithm>
+#include <climits>
 
 class PmergeMe {
 	private:
@@ -32,7 +34,9 @@ class PmergeMe {
 
 	int stringToInt(const std::string&);
 	bool isDigitOnly(const std::string&) const;
-
+	std::vector<int> generateInsertionOrder(int size);
+	void insertSmallerElements(std::vector<int>& S, const std::vector<std::pair<int,int>> &pairs);
+	
 	void parseInput(int ac, char **av);
 	void validateNumber(const std::string& number) const;
 
