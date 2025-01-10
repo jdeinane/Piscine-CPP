@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:51:35 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/10 23:42:12 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/10 23:48:15 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,21 @@ std::vector<int> PmergeMe::generateInsertionOrder(int size) {
 }
 
 // Insere les petits elements dans la sequence triee
-void PmergeMe::insertSmallerElements(std::vector<int>& S, const std::vector<std::pair<int, int>> &pairs) {
+void PmergeMe::insertSmallerElements(std::vector<int>& S, const std::vector< std::pair<int, int> > &pairs) {
 	for (size_t i = 0; i < pairs.size(); i++) {
 		int small = pairs[i].first;
 		if (small != INT_MAX) {
 			std::vector<int>::iterator pos = std::lower_bound(S.begin(), S.end(), small);
+			S.insert(pos, small);
+		}
+	}
+}
+
+void PmergeMe::insertSmallerElements(std::deque<int>& S, const std::deque< std::pair<int, int> > &pairs) {
+	for (size_t i = 0; i < pairs.size(); i++) {
+		int small = pairs[i].first;
+		if (small != INT_MAX) {
+			std::deque<int>::iterator pos = std::lower_bound(S.begin(), S.end(), small);
 			S.insert(pos, small);
 		}
 	}
@@ -100,8 +110,8 @@ void PmergeMe::mergeInsertSortVector(std::vector<int> &container) {
 		return;
 	
 	// Etape 1: Creer et trier les pairs
-	std::vector<std::pair<int, int>> pairs;
-	for (size_t i = 0; i + 1 < container.size(); i != 2) {
+	std::vector<std::pair<int, int> > pairs;
+	for (size_t i = 0; i + 1 < container.size(); i += 2) {
 		if (container[i] > container[i + 1])
 			pairs.push_back(std::make_pair(container[i + 1], container[i]));
 		else
@@ -138,14 +148,39 @@ void PmergeMe::mergeInsertSortDeque(std::deque<int> &container) {
 	if (container.size() <= 1)
 		return;
 	
-	std::deque<int> left(container.begin(), container.begin() + container.size() / 2);
-	std::deque<int> right(container.begin() + container.size() / 2, container.end());
+	// Etape 1: Creer et trier les pairs
+	std::deque<std::pair<int, int> > pairs;
+	for (size_t i = 0; i + 1 < container.size(); i += 2) {
+		if (container[i] > container[i + 1])
+			pairs.push_back(std::make_pair(container[i + 1], container[i]));
+		else
+			pairs.push_back(std::make_pair(container[i], container[i + 1]));
+	}
+	
+	// Ajouter l'element restant s'il y a un nombre impair
+	if (container.size() % 2 != 0)
+		pairs.push_back(std::make_pair(container.back(), INT_MAX));
+	
+	// Etape 2: Trier recursivement les grands elements
+	std::deque<int> mainSeq;
+	for (size_t i = 0; i < pairs.size(); i++) {
+		mainSeq.push_back(pairs[i].second);
+	}
+	mergeInsertSortDeque(mainSeq);
 
-	mergeInsertSortDeque(left);
-	mergeInsertSortDeque(right);
+	// Etape 3 et 4: Inserer les petits elements
+	insertSmallerElements(mainSeq, pairs);
 
-	container.clear();
-	std::merge(left.begin(), left.end(), right.begin(), right.end(), std::back_inserter(container));
+	// Etape 5: Optimiser l'insertion (ordre base sur les puissances de deux)
+	std::vector<int> insertionOrder = generateInsertionOrder(pairs.size());
+	for (size_t i = 0; i < insertionOrder.size(); i++) {
+		int idx = insertionOrder[i];
+		if (idx < pairs.size() && pairs[idx].first != INT_MAX) {
+			std::deque<int>::iterator pos = std::lower_bound(mainSeq.begin(), mainSeq.end(), pairs[idx].first);
+			mainSeq.insert(pos, pairs[idx].first);
+		}
+	}
+	container = mainSeq;
 }
 
 void PmergeMe::execute(int ac, char **av) {
