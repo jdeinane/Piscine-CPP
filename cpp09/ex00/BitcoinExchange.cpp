@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:58:31 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/13 10:01:05 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/13 11:34:10 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,6 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &other) {
 }
 
 BitcoinExchange::~BitcoinExchange() {}
-
-bool hasTxtExtension(const std::string& fileName) {
-	if (fileName.length() < 4)
-		return false;
-	return fileName.substr(fileName.length() - 4) == ".txt";
-}
 
 void BitcoinExchange::loadRates(const std::string &fileName) {
 	std::ifstream file(fileName.c_str());
@@ -114,7 +108,7 @@ void BitcoinExchange::processInput(const std::string &fileName) const {
 		throw std::runtime_error("Error: Cannot open file " + fileName);
 
 	if (fileName.length() < 4 || (fileName.substr(fileName.length() - 4 ) != ".txt"))
-		throw std::runtime_error("Error: Cannot open file " + fileName);
+		throw std::runtime_error("Error: Wrong file type. Please load '.txt' file");
 	
 	std::string line;
 	bool isFirstLine = true;
