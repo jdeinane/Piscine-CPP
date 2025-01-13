@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:58:31 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/13 13:42:45 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/13 13:48:56 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ double BitcoinExchange::calculateValue(const std::string &date, double value) co
 		throw std::runtime_error("Error: The rate database is empty.");
 	
 	std::map<std::string, double>::const_iterator it = _map.lower_bound(date);
+	
+	// verifie si la date existe
 	if (it == _map.end() || it->first != date) {
 		if (it == _map.begin())
 			throw std::runtime_error("Error: No available date.");
