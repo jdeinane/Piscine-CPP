@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:58:31 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/12/21 20:25:58 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/13 10:01:05 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,17 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &other) {
 
 BitcoinExchange::~BitcoinExchange() {}
 
+bool hasTxtExtension(const std::string& fileName) {
+	if (fileName.length() < 4)
+		return false;
+	return fileName.substr(fileName.length() - 4) == ".txt";
+}
+
 void BitcoinExchange::loadRates(const std::string &fileName) {
 	std::ifstream file(fileName.c_str());
 	if (!file.is_open())
 		throw std::runtime_error("Error: Cannot open file " + fileName);
-	
+
 	std::string line;
 	bool isFirstLine = true;
 
@@ -106,6 +112,9 @@ void BitcoinExchange::processInput(const std::string &fileName) const {
 	std::ifstream file(fileName.c_str());
 	if (!file.is_open())
 		throw std::runtime_error("Error: Cannot open file " + fileName);
+
+	if (fileName.length() < 4 || (fileName.substr(fileName.length() - 4 ) != ".txt"))
+		throw std::runtime_error("Error: Cannot open file " + fileName);
 	
 	std::string line;
 	bool isFirstLine = true;
@@ -121,6 +130,7 @@ void BitcoinExchange::processInput(const std::string &fileName) const {
 		std::string valueStr;
 
 		if (std::getline(ss, date, '|') && std::getline(ss, valueStr)) {
+			// nettoyer les espaces
 			date.erase(date.find_last_not_of(" \t") + 1);
 			date.erase(0, date.find_first_not_of(" \t"));
 			valueStr.erase(valueStr.find_last_not_of(" \t") + 1);
@@ -133,6 +143,13 @@ void BitcoinExchange::processInput(const std::string &fileName) const {
 			try {
 				char *end;
 				double value = std::strtod(valueStr.c_str(), &end);
+				
+				// verifier si la conversion a echoue ou si d'autres chars sont encore presents
+				if (*end != '\0') {
+					std::cerr << "Error: bad input => " << line << std::endl;
+					continue;
+				}
+				
 				if (value < 0) {
 					std::cerr << "Error: not a positive number." << std::endl;
 					continue;
