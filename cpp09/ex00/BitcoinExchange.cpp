@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:58:31 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/13 11:34:10 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/13 13:42:45 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &other) {
 
 BitcoinExchange::~BitcoinExchange() {}
 
+// fonction qui charge les taux de change du btc depuis un fichier CSV
 void BitcoinExchange::loadRates(const std::string &fileName) {
 	std::ifstream file(fileName.c_str());
 	if (!file.is_open())
@@ -47,7 +48,7 @@ void BitcoinExchange::loadRates(const std::string &fileName) {
 			try {
 				char *end;
 				double rate = std::strtod(rateStr.c_str(), &end);
-				_rate[date] = rate;
+				_map[date] = rate;
 			} catch (const std::invalid_argument &e) {
 				std::cerr << "Error: Line ignored because of invalid rate format : " << line << std::endl;
 			}
@@ -59,12 +60,12 @@ void BitcoinExchange::loadRates(const std::string &fileName) {
 }
 
 double BitcoinExchange::calculateValue(const std::string &date, double value) const {
-	if (_rate.empty())
+	if (_map.empty())
 		throw std::runtime_error("Error: The rate database is empty.");
 	
-	std::map<std::string, double>::const_iterator it = _rate.lower_bound(date);
-	if (it == _rate.end() || it->first != date) {
-		if (it == _rate.begin())
+	std::map<std::string, double>::const_iterator it = _map.lower_bound(date);
+	if (it == _map.end() || it->first != date) {
+		if (it == _map.begin())
 			throw std::runtime_error("Error: No available date.");
 		it--;
 	}

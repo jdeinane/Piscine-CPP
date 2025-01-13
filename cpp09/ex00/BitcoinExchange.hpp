@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:58:21 by jubaldo           #+#    #+#             */
-/*   Updated: 2025/01/13 10:23:03 by jubaldo          ###   ########.fr       */
+/*   Updated: 2025/01/13 13:42:37 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 class BitcoinExchange {
 	private:
-	std::map<std::string, double> _rate;
+	std::map<std::string, double> _map;
 
 	BitcoinExchange(BitcoinExchange const &other);
 	BitcoinExchange &operator=(BitcoinExchange const &other);
